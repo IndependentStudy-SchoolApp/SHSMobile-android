@@ -1,17 +1,19 @@
-package com.syosseths.jweis.shsmobile;
+package com.syosseths.shsmobile;
 
 import android.util.Log;
 
 public class FinalGradeCalc {
-
-    private String Q1grade = "";
-    private String Q2grade = "";
-    private String Q3grade = "";
-    private String Q4grade = "";
-    private String midtermGrade = "";
-    private String finalGrade = "";
-
-    public FinalGradeCalc(String q1, String q2, String q3, String q4, String mt, String fn) {
+    
+    private String Q1grade;
+    private String Q2grade;
+    private String Q3grade;
+    private String Q4grade;
+    private String midtermGrade;
+    private String finalGrade;
+    
+    
+    FinalGradeCalc(String q1, String q2, String q3, String q4, String mt, String fn)
+    {
         Q1grade = q1;
         Q2grade = q2;
         Q3grade = q3;
@@ -30,8 +32,10 @@ public class FinalGradeCalc {
 
         return getLetter(gradeNum);
     }
-
-    private String getLetter(double grade) {
+    
+    
+    private static String getLetter(double grade)
+    {
         if (grade >= 7.5)
             return "A+";
         else if (grade >= 6.5)
@@ -49,8 +53,10 @@ public class FinalGradeCalc {
         else
             return "F";
     }
-
-    private double getNum(String letter) {
+    
+    
+    private static double getNum(String letter)
+    {
         switch (letter) {
             case "A+":
                 return 8;

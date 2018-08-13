@@ -1,4 +1,4 @@
-package com.syosseths.jweis.shsmobile;
+package com.syosseths.shsmobile;
 
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
@@ -39,10 +39,10 @@ public class Tab_Notifications extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_tab_notifications, container, false);
-
-        notifSwitch = (Switch) rootView.findViewById(R.id.switch1);
-        timePicker = (TimePicker) rootView.findViewById(R.id.timePicker1);
-        saveButton = (Button) rootView.findViewById(R.id.saveChanges_button);
+    
+        notifSwitch = rootView.findViewById(R.id.switch1);
+        timePicker = rootView.findViewById(R.id.timePicker1);
+        saveButton = rootView.findViewById(R.id.saveChanges_button);
 
         sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
         editor = sharedPreferences.edit();

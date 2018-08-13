@@ -1,16 +1,13 @@
-package com.syosseths.jweis.shsmobile;
+package com.syosseths.shsmobile;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.syosseths.jweis.shsmobile.R;
 
 public class Tab_BellSchedule extends Fragment {
 
@@ -22,17 +19,17 @@ public class Tab_BellSchedule extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_bellschedule, container, false);
-
-        schedSpinner = (Spinner) rootView.findViewById(R.id.spinner_bellschedules);
-        p1Time = (TextView) rootView.findViewById(R.id.p1Time);
-        p2Time = (TextView) rootView.findViewById(R.id.p2Time);
-        p3Time = (TextView) rootView.findViewById(R.id.p3Time);
-        p4Time = (TextView) rootView.findViewById(R.id.p4Time);
-        p5Time = (TextView) rootView.findViewById(R.id.p5Time);
-        p6Time = (TextView) rootView.findViewById(R.id.p6Time);
-        p7Time = (TextView) rootView.findViewById(R.id.p7Time);
-        p8Time = (TextView) rootView.findViewById(R.id.p8Time);
-        p9Time = (TextView) rootView.findViewById(R.id.p9Time);
+    
+        schedSpinner = rootView.findViewById(R.id.spinner_bellschedules);
+        p1Time = rootView.findViewById(R.id.p1Time);
+        p2Time = rootView.findViewById(R.id.p2Time);
+        p3Time = rootView.findViewById(R.id.p3Time);
+        p4Time = rootView.findViewById(R.id.p4Time);
+        p5Time = rootView.findViewById(R.id.p5Time);
+        p6Time = rootView.findViewById(R.id.p6Time);
+        p7Time = rootView.findViewById(R.id.p7Time);
+        p8Time = rootView.findViewById(R.id.p8Time);
+        p9Time = rootView.findViewById(R.id.p9Time);
 
         //View v = new View(getContext());
 

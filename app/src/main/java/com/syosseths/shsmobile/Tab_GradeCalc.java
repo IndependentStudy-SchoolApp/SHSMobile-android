@@ -1,4 +1,4 @@
-package com.syosseths.jweis.shsmobile;
+package com.syosseths.shsmobile;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,15 +20,15 @@ public class Tab_GradeCalc extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_gradecalc, container, false);
-
-        finalGradeLabel = (TextView) rootView.findViewById(R.id.finalGradeText);
-        etq1 = (Spinner) rootView.findViewById(R.id.spinnerQ1);
-        etq2 = (Spinner) rootView.findViewById(R.id.spinnerQ2);
-        etq3 = (Spinner) rootView.findViewById(R.id.spinnerQ3);
-        etq4 = (Spinner) rootView.findViewById(R.id.spinnerQ4);
-        etmt = (Spinner) rootView.findViewById(R.id.spinnerMT);
-        etfn = (Spinner) rootView.findViewById(R.id.spinnerFN);
-        calcButton = (Button) rootView.findViewById(R.id.calcGradeButton);
+    
+        finalGradeLabel = rootView.findViewById(R.id.finalGradeText);
+        etq1 = rootView.findViewById(R.id.spinnerQ1);
+        etq2 = rootView.findViewById(R.id.spinnerQ2);
+        etq3 = rootView.findViewById(R.id.spinnerQ3);
+        etq4 = rootView.findViewById(R.id.spinnerQ4);
+        etmt = rootView.findViewById(R.id.spinnerMT);
+        etfn = rootView.findViewById(R.id.spinnerFN);
+        calcButton = rootView.findViewById(R.id.calcGradeButton);
 
 
         View v = new View(getContext());
