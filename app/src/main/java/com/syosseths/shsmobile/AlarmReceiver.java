@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -92,7 +92,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
             if (result.equals("R") || result.equals("W")) {
                 NotificationCompat.Builder mBuilder =
-                        (NotificationCompat.Builder) new NotificationCompat.Builder(context)
+                        new NotificationCompat.Builder(context, "1")
                                 .setSmallIcon(contentIcon)
                                 .setLargeIcon(contentBitmap)
                                 .setContentTitle("Syosset High School")
