@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             // Returning the current tabs
             switch (position) {
                 case 0:
-                    return new Tab_Notifications();
+                    return new NotificationsFragment();
                 case 1:
                     return new Tab_GradeCalc();
                 case 2:
