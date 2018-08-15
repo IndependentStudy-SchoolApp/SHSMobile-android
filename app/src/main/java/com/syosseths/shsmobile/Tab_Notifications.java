@@ -49,8 +49,18 @@ public class Tab_Notifications extends Fragment {
 
         timeHour = sharedPreferences.getInt("notifHour", 6);
         timeMinute = sharedPreferences.getInt("notifMinute", 0);
-        timePicker.setHour(timeHour);
-        timePicker.setMinute(timeMinute);
+    
+        // support for nox emulator api 19
+        if(Build.VERSION.SDK_INT < 23)
+        {
+            timePicker.setCurrentHour(timeHour);
+            timePicker.setCurrentMinute(timeMinute);
+        } else
+        {
+            timePicker.setHour(timeHour);
+            timePicker.setMinute(timeMinute);
+        }
+        
         timePicker.setScaleX((float) 1.1);
         timePicker.setScaleY((float) 1.1);
 
