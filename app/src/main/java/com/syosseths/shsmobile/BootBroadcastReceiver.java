@@ -13,8 +13,8 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onReceive(Context pContext, Intent intent) {
-        //int timeHour = sharedPreferences.getInt("notifHour", 6);
-        //int timeMinute = sharedPreferences.getInt("notifMinute", 0);
-        //setNotification(timeHour, timeMinute);
+        //int notifHour = sharedPreferences.getInt("notifHour", 6);
+        //int notifMinute = sharedPreferences.getInt("notifMinute", 0);
+        //setNotification(notifHour, notifMinute);
     }
 }
