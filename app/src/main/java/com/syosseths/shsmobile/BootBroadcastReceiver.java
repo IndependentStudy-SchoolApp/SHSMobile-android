@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+// what is this class? it look like a failed attempt / no implementation
 public class BootBroadcastReceiver extends BroadcastReceiver {
 
     @SuppressLint("UnsafeProtectedBroadcastReceiver")

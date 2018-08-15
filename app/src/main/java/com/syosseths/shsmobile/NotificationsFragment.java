@@ -31,8 +31,8 @@ public class NotificationsFragment extends Fragment {
     int notifHour, notifMinute;
 
 
-    @TargetApi(Build.VERSION_CODES.N)
-    @RequiresApi(Build.VERSION_CODES.M)
+    @TargetApi(Build.VERSION_CODES.O_MR1)
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class NotificationsFragment extends Fragment {
         notifMinute = sharedPreferences.getInt("notifMinute", 0);
 
         // support for api under 23
-        if (Build.VERSION.SDK_INT < 23) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             timePicker.setCurrentHour(notifHour);
             timePicker.setCurrentMinute(notifMinute);
         } else {
@@ -68,8 +68,8 @@ public class NotificationsFragment extends Fragment {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.N)
-    @RequiresApi(Build.VERSION_CODES.M)
+    @TargetApi(Build.VERSION_CODES.O_MR1)
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     public void saveChanges() {
         // support for api under 23
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -93,8 +93,8 @@ public class NotificationsFragment extends Fragment {
 
     }
 
-
-    @RequiresApi(Build.VERSION_CODES.N)
+    @TargetApi(Build.VERSION_CODES.O_MR1)
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
     public void setNotification(int notifHour, int notifMinute) {
 
         Intent notifIntent = new Intent(getContext(), AlarmReceiver.class);
@@ -110,7 +110,12 @@ public class NotificationsFragment extends Fragment {
         AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 
         if (alarmManager != null) {
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            //else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+            //    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
             Toast.makeText(this.getContext(), "Notifications enabled!", Toast.LENGTH_SHORT).show();
         } else
             Toast.makeText(this.getContext(), "Notifications failed to enable, please retry and check your notification settings", Toast.LENGTH_SHORT).show();
