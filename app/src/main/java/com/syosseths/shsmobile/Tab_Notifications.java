@@ -49,6 +49,7 @@ public class Tab_Notifications extends Fragment {
         timeHour = sharedPreferences.getInt("notifHour", 6);
         timeMinute = sharedPreferences.getInt("notifMinute", 0);
 
+
         // support for nox emulator api 19
         if (Build.VERSION.SDK_INT < 23) {
             timePicker.setCurrentHour(timeHour);
@@ -78,8 +79,14 @@ public class Tab_Notifications extends Fragment {
     @TargetApi(Build.VERSION_CODES.N)
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void saveChanges() {
-        timeHour = timePicker.getHour();
-        timeMinute = timePicker.getMinute();
+        // support for nox emulator api 19
+        if (Build.VERSION.SDK_INT < 23) {
+            timePicker.getCurrentHour();
+            timePicker.getCurrentMinute();
+        } else {
+            timeHour = timePicker.getHour();
+            timeMinute = timePicker.getMinute();
+        }
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("notifEnabled", notifSwitch.isChecked());
@@ -114,4 +121,6 @@ public class Tab_Notifications extends Fragment {
             manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
     }
+
+
 }
