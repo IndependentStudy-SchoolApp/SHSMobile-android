@@ -11,16 +11,16 @@ import android.widget.TextView;
 
 public class Tab_GradeCalc extends Fragment {
 
-    String q1="F",q2="F",q3="F",q4="F",mt="F",fn="F";
+    String q1 = "F", q2 = "F", q3 = "F", q4 = "F", mt = "F", fn = "F";
     TextView finalGradeLabel;
-    Spinner etq1,etq2,etq3,etq4,etmt,etfn;
+    Spinner etq1, etq2, etq3, etq4, etmt, etfn;
     Button calcButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_gradecalc, container, false);
-    
+
         finalGradeLabel = rootView.findViewById(R.id.finalGradeText);
         etq1 = rootView.findViewById(R.id.spinnerQ1);
         etq2 = rootView.findViewById(R.id.spinnerQ2);
@@ -32,10 +32,8 @@ public class Tab_GradeCalc extends Fragment {
 
 
         View v = new View(getContext());
-        calcButton.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        calcButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 q1 = String.valueOf(etq1.getSelectedItem());
                 q2 = String.valueOf(etq2.getSelectedItem());
                 q3 = String.valueOf(etq3.getSelectedItem());
@@ -43,7 +41,7 @@ public class Tab_GradeCalc extends Fragment {
                 mt = String.valueOf(etmt.getSelectedItem());
                 fn = String.valueOf(etfn.getSelectedItem());
 
-                FinalGradeCalc fgc = new FinalGradeCalc(q1,q2,q3,q4,mt,fn);
+                FinalGradeCalc fgc = new FinalGradeCalc(q1, q2, q3, q4, mt, fn);
 
                 finalGradeLabel.setText(fgc.getOverallGrade());
             }

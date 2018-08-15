@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    
+
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         if (toolbar != null) {
@@ -58,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-    
+
         bannerTextView = findViewById(R.id.bannerTextView);
         announcementTextView = findViewById(R.id.announcementTextView);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-    
+
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
@@ -124,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
 
     private class GetDayTask extends AsyncTask<String, Void, String> {
 
-        public GetDayTask() {}
+        public GetDayTask() {
+        }
 
         @Override
         protected String doInBackground(String... strings) {
@@ -137,8 +137,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String apiResponse)
-        {
+        protected void onPostExecute(String apiResponse) {
             String[] arrayResult = new String[2];
 
             int start = apiResponse.indexOf("{", apiResponse.indexOf("{") + 1);
@@ -153,8 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
             String contentText, dayText = "", announcementText = arrayResult[1];
 
-            switch(arrayResult[0])
-            {
+            switch (arrayResult[0]) {
                 case "R":
                     dayText = "TODAY IS A RED DAY";
                     break;
@@ -167,10 +165,10 @@ public class MainActivity extends AppCompatActivity {
 
             bannerTextView.setText(dayText);
 
-            if(!announcementText.equals("-"))
+            if (!announcementText.equals("-"))
                 announcementTextView.setText(announcementText);
             else {
-                announcementTextView.setPadding(0,0,0,0);
+                announcementTextView.setPadding(0, 0, 0, 0);
                 announcementTextView.setHeight(0);
                 announcementTextView.setText("");
             }
@@ -234,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             for (int r = 0; r < rows.length(); ++r) {
                 JSONObject row = rows.getJSONObject(r);
 
-                if(row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
+                if (row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
                     dateInfo[0] = row.getJSONArray("c").getJSONObject(1).getString("v");
                     dateInfo[1] = row.getJSONArray("c").getJSONObject(2).getString("v");
                     break;

@@ -9,66 +9,66 @@
                 tools:context="com.syosseths.shsmobile.MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
         <TextView
-            android:text="@string/tab_notifications"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/notificationsTitle"
-            android:textStyle="normal|bold"
-            android:textSize="14sp"
-            android:textColor="@color/colorPrimary"
-            android:paddingBottom="20dp" />
+                android:text="@string/tab_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/notificationsTitle"
+                android:textStyle="normal|bold"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingBottom="20dp"/>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tableRow1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableRow1">
 
             <TextView
-                android:text="@string/dailyNotif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView1"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_gravity="start" />
+                    android:text="@string/dailyNotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:layout_gravity="start"/>
 
             <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/switch1"
-                android:gravity="start"
-                android:paddingStart="160dp"
-                android:checked="true" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/switch1"
+                    android:gravity="start"
+                    android:paddingStart="160dp"
+                    android:checked="true"/>
 
         </TableRow>
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="?attr/colorPrimary"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
 
         <TextView
-            android:text="@string/notifTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textSize="18sp"
-            android:textColor="#000"
-            android:layout_gravity="start" />
+                android:text="@string/notifTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_gravity="start"/>
 
-            <TimePicker
+        <TimePicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/timePicker1"
@@ -78,22 +78,22 @@
 
 
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="?attr/colorPrimary"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="-15dp" />
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="?attr/colorPrimary"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="-15dp"/>
 
 
         <Button
-            android:text="@string/save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/saveChanges_button"
-            style="@style/Widget.AppCompat.Button"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center_horizontal" />
+                android:text="@string/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/saveChanges_button"
+                style="@style/Widget.AppCompat.Button"
+                android:textAlignment="center"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 

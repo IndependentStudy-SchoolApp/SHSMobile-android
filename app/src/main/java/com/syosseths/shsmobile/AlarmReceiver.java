@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.NotificationCompat;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,7 +41,8 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private class GetDayTask extends AsyncTask<String, Void, String> {
 
-        public GetDayTask() {}
+        public GetDayTask() {
+        }
 
         @Override
         protected String doInBackground(String... strings) {
@@ -55,8 +55,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
 
         @Override
-        protected void onPostExecute(String apiResponse)
-        {
+        protected void onPostExecute(String apiResponse) {
             String result = "N";
 
             int start = apiResponse.indexOf("{", apiResponse.indexOf("{") + 1);
@@ -76,8 +75,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             int contentIcon = R.drawable.s_nd;
             Bitmap contentBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.s_nd);
 
-            switch(result)
-            {
+            switch (result) {
                 case "R":
                     contentText = "Today is a Red Day.";
                     contentIcon = R.drawable.s_red;
@@ -92,7 +90,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                     break;
             }
 
-            if(result.equals("R") || result.equals("W")) {
+            if (result.equals("R") || result.equals("W")) {
                 NotificationCompat.Builder mBuilder =
                         (NotificationCompat.Builder) new NotificationCompat.Builder(context)
                                 .setSmallIcon(contentIcon)
@@ -170,7 +168,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             for (int r = 0; r < rows.length(); ++r) {
                 JSONObject row = rows.getJSONObject(r);
 
-                if(row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
+                if (row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
                     dayType = row.getJSONArray("c").getJSONObject(1).getString("v");
                     break;
                 }

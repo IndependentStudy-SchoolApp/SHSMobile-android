@@ -19,7 +19,7 @@ public class Tab_BellSchedule extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_bellschedule, container, false);
-    
+
         schedSpinner = rootView.findViewById(R.id.spinner_bellschedules);
         p1Time = rootView.findViewById(R.id.p1Time);
         p2Time = rootView.findViewById(R.id.p2Time);
@@ -38,8 +38,7 @@ public class Tab_BellSchedule extends Fragment {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String schedule = schedSpinner.getSelectedItem().toString();
                 //Log.d("Schedspinner String: ", schedule);
-                if(position==0)
-                {
+                if (position == 0) {
                     p1Time.setText(getResources().getString(R.string.p1Time));
                     p2Time.setText(getResources().getString(R.string.p2Time));
                     p3Time.setText(getResources().getString(R.string.p3Time));
@@ -49,9 +48,7 @@ public class Tab_BellSchedule extends Fragment {
                     p7Time.setText(getResources().getString(R.string.p7Time));
                     p8Time.setText(getResources().getString(R.string.p8Time));
                     p9Time.setText(getResources().getString(R.string.p9Time));
-                }
-                else
-                {
+                } else {
                     p1Time.setText(getResources().getString(R.string.p1Time2));
                     p2Time.setText(getResources().getString(R.string.p2Time2));
                     p3Time.setText(getResources().getString(R.string.p3Time2));
