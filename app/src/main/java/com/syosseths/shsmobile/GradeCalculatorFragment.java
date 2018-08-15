@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Tab_GradeCalc extends Fragment {
+public class GradeCalculatorFragment extends Fragment {
 
     String q1 = "F", q2 = "F", q3 = "F", q4 = "F", mt = "F", fn = "F";
     TextView finalGradeLabel;
@@ -19,7 +19,7 @@ public class Tab_GradeCalc extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_tab_gradecalc, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_grade_calculator, container, false);
 
         finalGradeLabel = rootView.findViewById(R.id.finalGradeText);
         etq1 = rootView.findViewById(R.id.spinnerQ1);

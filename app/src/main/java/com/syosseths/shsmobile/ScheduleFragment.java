@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Tab_BellSchedule extends Fragment {
+public class ScheduleFragment extends Fragment {
 
     Spinner schedSpinner;
     TextView p1Time, p2Time, p3Time, p4Time, p5Time, p6Time, p7Time, p8Time, p9Time;
@@ -18,7 +18,7 @@ public class Tab_BellSchedule extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_tab_bellschedule, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
 
         schedSpinner = rootView.findViewById(R.id.spinner_bellschedules);
         p1Time = rootView.findViewById(R.id.p1Time);

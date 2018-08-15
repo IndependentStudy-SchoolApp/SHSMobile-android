@@ -93,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return new NotificationsFragment();
                 case 1:
-                    return new Tab_GradeCalc();
+                    return new GradeCalculatorFragment();
                 case 2:
-                    return new Tab_BellSchedule();
+                    return new ScheduleFragment();
                 default:
                     return null;
             }
