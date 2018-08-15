@@ -37,7 +37,7 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_tab_notifications, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         notifSwitch = rootView.findViewById(R.id.notifSwitch);
         timePicker = rootView.findViewById(R.id.timePicker);
