@@ -7,7 +7,7 @@ public class GradeCalculator {
             MIDTERM_PERCENT = 0.08,
             FINAL_PERCENT = 0.12;
 
-    public static LetterGrade calculateGrade(LetterGrade q1, LetterGrade q2, LetterGrade q3, LetterGrade q4, LetterGrade mt, LetterGrade fn) {
+    public static LetterGrade calcGrade(LetterGrade q1, LetterGrade q2, LetterGrade q3, LetterGrade q4, LetterGrade mt, LetterGrade fn) {
         double grade =
                 (getNumberGrade(q1) * QUARTER_PERCENT)
                         + (getNumberGrade(q2) * QUARTER_PERCENT)
