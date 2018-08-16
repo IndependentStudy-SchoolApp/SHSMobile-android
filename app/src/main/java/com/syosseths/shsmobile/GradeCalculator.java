@@ -2,7 +2,7 @@ package com.syosseths.shsmobile;
 
 import android.util.Log;
 
-public class FinalGradeCalc {
+public class GradeCalculator {
 
     private String Q1grade;
     private String Q2grade;
@@ -12,7 +12,7 @@ public class FinalGradeCalc {
     private String finalGrade;
 
 
-    FinalGradeCalc(String q1, String q2, String q3, String q4, String mt, String fn) {
+    GradeCalculator(String q1, String q2, String q3, String q4, String mt, String fn) {
         Q1grade = q1;
         Q2grade = q2;
         Q3grade = q3;

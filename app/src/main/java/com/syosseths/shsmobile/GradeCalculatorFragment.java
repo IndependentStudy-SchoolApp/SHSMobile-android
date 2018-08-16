@@ -11,36 +11,37 @@ import android.widget.TextView;
 
 public class GradeCalculatorFragment extends Fragment {
 
-    String q1 = "F", q2 = "F", q3 = "F", q4 = "F", mt = "F", fn = "F";
+    String q1, q2, q3, q4, mt, fn;
+    GradeCalculator gradeCalculator;
     TextView finalGradeLabel;
-    Spinner etq1, etq2, etq3, etq4, etmt, etfn;
-    Button calcButton;
+    Button calcGradeButton;
+    private Spinner spinnerQ1, spinnerQ2, spinnerQ3, spinnerQ4, spinnerMT, spinnerFN;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_grade_calculator, container, false);
 
-        finalGradeLabel = rootView.findViewById(R.id.finalGradeText);
-        etq1 = rootView.findViewById(R.id.spinnerQ1);
-        etq2 = rootView.findViewById(R.id.spinnerQ2);
-        etq3 = rootView.findViewById(R.id.spinnerQ3);
-        etq4 = rootView.findViewById(R.id.spinnerQ4);
-        etmt = rootView.findViewById(R.id.spinnerMT);
-        etfn = rootView.findViewById(R.id.spinnerFN);
-        calcButton = rootView.findViewById(R.id.calcGradeButton);
+        finalGradeLabel = rootView.findViewById(R.id.finalGradeLabel);
+        calcGradeButton = rootView.findViewById(R.id.calcGradeButton);
 
-        calcButton.setOnClickListener((View) -> {
-                q1 = String.valueOf(etq1.getSelectedItem());
-                q2 = String.valueOf(etq2.getSelectedItem());
-                q3 = String.valueOf(etq3.getSelectedItem());
-                q4 = String.valueOf(etq4.getSelectedItem());
-                mt = String.valueOf(etmt.getSelectedItem());
-                fn = String.valueOf(etfn.getSelectedItem());
+        spinnerQ1 = rootView.findViewById(R.id.spinnerQ1);
+        spinnerQ2 = rootView.findViewById(R.id.spinnerQ2);
+        spinnerQ3 = rootView.findViewById(R.id.spinnerQ3);
+        spinnerQ4 = rootView.findViewById(R.id.spinnerQ4);
+        spinnerMT = rootView.findViewById(R.id.spinnerMT);
+        spinnerFN = rootView.findViewById(R.id.spinnerFN);
+        gradeCalculator = new GradeCalculator(q1, q2, q3, q4, mt, fn);
 
-                FinalGradeCalc fgc = new FinalGradeCalc(q1, q2, q3, q4, mt, fn);
+        calcGradeButton.setOnClickListener((View) -> {
+            q1 = String.valueOf(spinnerQ1.getSelectedItem());
+            q2 = String.valueOf(spinnerQ2.getSelectedItem());
+            q3 = String.valueOf(spinnerQ3.getSelectedItem());
+            q4 = String.valueOf(spinnerQ4.getSelectedItem());
+            mt = String.valueOf(spinnerMT.getSelectedItem());
+            fn = String.valueOf(spinnerFN.getSelectedItem());
 
-                finalGradeLabel.setText(fgc.getOverallGrade());
+            finalGradeLabel.setText(gradeCalculator.getOverallGrade());
             }
         );
 
