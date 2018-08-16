@@ -32,8 +32,7 @@ public class GradeCalculatorFragment extends Fragment {
 
 
         View v = new View(getContext());
-        calcButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        calcButton.setOnClickListener((View) -> {
                 q1 = String.valueOf(etq1.getSelectedItem());
                 q2 = String.valueOf(etq2.getSelectedItem());
                 q3 = String.valueOf(etq3.getSelectedItem());
@@ -45,7 +44,7 @@ public class GradeCalculatorFragment extends Fragment {
 
                 finalGradeLabel.setText(fgc.getOverallGrade());
             }
-        });
+        );
 
         return rootView;
     }

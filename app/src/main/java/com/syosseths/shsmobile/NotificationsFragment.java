@@ -62,7 +62,7 @@ public class NotificationsFragment extends Fragment {
 
         notifSwitch.setChecked(sharedPreferences.getBoolean("notifEnabled", false));
 
-        saveButton.setOnClickListener((View v) -> saveChanges());
+        saveButton.setOnClickListener((View) -> saveChanges());
 
         return rootView;
     }
