@@ -4,6 +4,20 @@ import android.util.Log;
 
 public class GradeCalculator {
 
+    public enum Grade {
+        A_PLUS(8), A(7), B_PLUS(6), B(5), C_PLUS(4), C(3), D(2), F(0);
+
+        private int value;
+
+        Grade(int val) {
+            this.value = val;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
     private String Q1grade;
     private String Q2grade;
     private String Q3grade;

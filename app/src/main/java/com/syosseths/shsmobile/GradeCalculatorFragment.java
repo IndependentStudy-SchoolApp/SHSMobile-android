@@ -23,7 +23,6 @@ public class GradeCalculatorFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_grade_calculator, container, false);
 
         finalGradeLabel = rootView.findViewById(R.id.finalGradeLabel);
-        calcGradeButton = rootView.findViewById(R.id.calcGradeButton);
 
         spinnerQ1 = rootView.findViewById(R.id.spinnerQ1);
         spinnerQ2 = rootView.findViewById(R.id.spinnerQ2);
@@ -31,6 +30,9 @@ public class GradeCalculatorFragment extends Fragment {
         spinnerQ4 = rootView.findViewById(R.id.spinnerQ4);
         spinnerMT = rootView.findViewById(R.id.spinnerMT);
         spinnerFN = rootView.findViewById(R.id.spinnerFN);
+
+        calcGradeButton = rootView.findViewById(R.id.calcGradeButton);
+
         gradeCalculator = new GradeCalculator(q1, q2, q3, q4, mt, fn);
 
         calcGradeButton.setOnClickListener((View) -> {
