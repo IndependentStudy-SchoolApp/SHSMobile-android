@@ -36,7 +36,7 @@ public class GradeCalculatorFragment extends Fragment {
         spinners[4] = (spinnerMT = rootView.findViewById(R.id.spinnerMT));
         spinners[5] = (spinnerFN = rootView.findViewById(R.id.spinnerFN));
         for (Spinner spinner : spinners) {
-            spinnerQ1.setAdapter(new ArrayAdapter<>(Objects.requireNonNull(getContext()), android.R.layout.simple_spinner_item, LetterGrade.values()));
+            spinner.setAdapter(new ArrayAdapter<>(Objects.requireNonNull(getContext()), android.R.layout.simple_spinner_item, LetterGrade.values()));
         }
 
         calcGradeButton = rootView.findViewById(R.id.calcGradeButton);
