@@ -26,7 +26,7 @@ import static android.content.Context.NOTIFICATION_SERVICE;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
-    private static String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
+    private final static String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
     public Context context;
 
     @Override
