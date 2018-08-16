@@ -1,6 +1,7 @@
 package com.syosseths.shsmobile;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +12,14 @@ import android.widget.TextView;
 
 public class GradeCalculatorFragment extends Fragment {
 
-    String q1, q2, q3, q4, mt, fn;
-    GradeCalculator gradeCalculator;
-    TextView finalGradeLabel;
-    Button calcGradeButton;
+    private String q1, q2, q3, q4, mt, fn;
+    private GradeCalculator gradeCalculator;
+    private TextView finalGradeLabel;
+    private Button calcGradeButton;
     private Spinner spinnerQ1, spinnerQ2, spinnerQ3, spinnerQ4, spinnerMT, spinnerFN;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_grade_calculator, container, false);
 
@@ -43,7 +44,7 @@ public class GradeCalculatorFragment extends Fragment {
             mt = String.valueOf(spinnerMT.getSelectedItem());
             fn = String.valueOf(spinnerFN.getSelectedItem());
 
-            finalGradeLabel.setText(gradeCalculator.getOverallGrade());
+            finalGradeLabel.setText(GradeCalculator.calculateGrade());
             }
         );
 
