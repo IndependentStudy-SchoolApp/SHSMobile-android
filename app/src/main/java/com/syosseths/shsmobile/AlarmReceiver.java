@@ -28,13 +28,11 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private static String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
     public Context context;
-    public Intent intent;
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
         this.context = context;
-        this.intent = intent;
 
         new GetDayTask().execute(url);
     }
@@ -135,7 +133,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
     }
 
-    private String convertStreamToString(InputStream is) {
+    private static String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
 
@@ -156,7 +154,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         return sb.toString();
     }
 
-    private String processJson(JSONObject object) {
+    private static String processJson(JSONObject object) {
         String dayType = "";
 
         Date cDate = new Date();

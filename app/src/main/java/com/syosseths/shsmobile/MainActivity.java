@@ -121,6 +121,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private static String[] processJson(JSONObject object) {
+        String[] dateInfo = new String[2];
+
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("MM/dd/yyyy").format(cDate);
+
+        try {
+            JSONArray rows = object.getJSONArray("rows");
+
+            for (int r = 0; r < rows.length(); ++r) {
+                JSONObject row = rows.getJSONObject(r);
+
+                if (row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
+                    dateInfo[0] = row.getJSONArray("c").getJSONObject(1).getString("v");
+                    dateInfo[1] = row.getJSONArray("c").getJSONObject(2).getString("v");
+                    break;
+                }
+            }
+
+            return dateInfo;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private class GetDayTask extends AsyncTask<String, Void, String> {
 
         public GetDayTask() {
@@ -150,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            String contentText, dayText = "", announcementText = arrayResult[1];
+            String dayText = "", announcementText = arrayResult[1];
 
             switch (arrayResult[0]) {
                 case "R":
@@ -186,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
                 conn.setDoInput(true);
                 // Starts the query
                 conn.connect();
-                int responseCode = conn.getResponseCode();
                 is = conn.getInputStream();
 
                 String contentAsString = convertStreamToString(is);
@@ -217,33 +243,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return sb.toString();
-        }
-    }
-
-    private String[] processJson(JSONObject object) {
-        String[] dateInfo = new String[2];
-
-        Date cDate = new Date();
-        String fDate = new SimpleDateFormat("MM/dd/yyyy").format(cDate);
-
-        try {
-            JSONArray rows = object.getJSONArray("rows");
-
-            for (int r = 0; r < rows.length(); ++r) {
-                JSONObject row = rows.getJSONObject(r);
-
-                if (row.getJSONArray("c").getJSONObject(0).getString("f").equals(fDate)) {
-                    dateInfo[0] = row.getJSONArray("c").getJSONObject(1).getString("v");
-                    dateInfo[1] = row.getJSONArray("c").getJSONObject(2).getString("v");
-                    break;
-                }
-            }
-
-            return dateInfo;
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
         }
     }
 }

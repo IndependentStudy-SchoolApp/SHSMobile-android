@@ -36,7 +36,7 @@ public class ScheduleFragment extends Fragment {
         schedSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String schedule = schedSpinner.getSelectedItem().toString();
+                //String schedule = schedSpinner.getSelectedItem().toString();
                 //Log.d("Schedspinner String: ", schedule);
                 if (position == 0) {
                     p1Time.setText(getResources().getString(R.string.p1Time));

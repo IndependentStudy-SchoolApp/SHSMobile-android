@@ -30,8 +30,6 @@ public class GradeCalculatorFragment extends Fragment {
         etfn = rootView.findViewById(R.id.spinnerFN);
         calcButton = rootView.findViewById(R.id.calcGradeButton);
 
-
-        View v = new View(getContext());
         calcButton.setOnClickListener((View) -> {
                 q1 = String.valueOf(etq1.getSelectedItem());
                 q2 = String.valueOf(etq2.getSelectedItem());
