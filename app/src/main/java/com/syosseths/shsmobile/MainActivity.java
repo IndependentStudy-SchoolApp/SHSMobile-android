@@ -23,6 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-            getSupportActionBar().setLogo(R.drawable.logoti);
+            Objects.requireNonNull(getSupportActionBar()).setLogo(R.drawable.logoti);
             getSupportActionBar().setHomeButtonEnabled(true);
 
         }
