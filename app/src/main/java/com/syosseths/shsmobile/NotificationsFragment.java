@@ -70,7 +70,7 @@ public class NotificationsFragment extends Fragment {
 
     @TargetApi(Build.VERSION_CODES.O_MR1)
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    public void saveChanges() {
+    private void saveChanges() {
         // support for api under 23
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             timePicker.getCurrentHour();
@@ -95,7 +95,7 @@ public class NotificationsFragment extends Fragment {
 
     @TargetApi(Build.VERSION_CODES.O_MR1)
     @RequiresApi(Build.VERSION_CODES.KITKAT)
-    public void setNotification(int notifHour, int notifMinute) {
+    private void setNotification(int notifHour, int notifMinute) {
 
         Intent notifIntent = new Intent(getContext(), AlarmReceiver.class);
 
