@@ -20,6 +20,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -44,7 +45,7 @@ public class NotificationsFragment extends Fragment {
         timePicker = rootView.findViewById(R.id.timePicker);
         saveButton = rootView.findViewById(R.id.saveButton);
 
-        sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
+        sharedPreferences = Objects.requireNonNull(getActivity()).getPreferences(MODE_PRIVATE);
 
         notifHour = sharedPreferences.getInt("notifHour", 6);
         notifMinute = sharedPreferences.getInt("notifMinute", 0);
@@ -108,7 +109,7 @@ public class NotificationsFragment extends Fragment {
         calendar.set(Calendar.MINUTE, notifMinute);
         calendar.set(Calendar.SECOND, 0);
 
-        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmManager = (AlarmManager) Objects.requireNonNull(getActivity()).getSystemService(Context.ALARM_SERVICE);
 
         if (alarmManager != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
