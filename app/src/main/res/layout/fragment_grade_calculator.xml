@@ -1,217 +1,209 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.syosseths.shsmobile.MainActivity"><!--$PlaceholderFragment-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="31dp"
+    android:paddingRight="31dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.syosseths.shsmobile.MainActivity">
 
-    <LinearLayout
-            android:orientation="vertical"
+
+    <TextView
+        android:id="@+id/gradecalcTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/tab_gradecalculator"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp">
+            android:layout_height="match_parent">
 
-        <TextView
-                android:id="@+id/gradecalcTitle"
+            <TextView
+                android:id="@+id/q1TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q1Text"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerQ1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:text="@string/tab_gradecalculator"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14sp"
-                android:textStyle="normal|bold"/>
+                android:entries="@array/grades_array"
+                android:paddingLeft="10dp" />
 
-        <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/q1TextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/q1Text"/>
-
-                <Spinner
-                        android:id="@+id/spinnerQ1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="10dp"/>
-
-            </TableRow>
-
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/q2TextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/q2Text"/>
-
-                <Spinner
-                        android:id="@+id/spinnerQ2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="15dp"/>
-            </TableRow>
-
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/q3TextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/q3Text"/>
-
-                <Spinner
-                        android:id="@+id/spinnerQ3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="10dp"/>
-            </TableRow>
-
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/q4TextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/q4Text"/>
-
-                <Spinner
-                        android:id="@+id/spinnerQ4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="10dp"/>
-            </TableRow>
-
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/mtTextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mtText"/>
-
-                <Spinner
-                        android:id="@+id/spinnerMT"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="10dp"/>
-            </TableRow>
-
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:id="@+id/finalTextView"
-                        android:textSize="18sp"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fnText"/>
-
-                <Spinner
-                        android:id="@+id/spinnerFN"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:entries="@array/grades_array"
-                        android:paddingLeft="10dp"/>
-
-            </TableRow>
-
-        </TableLayout>
+        </TableRow>
 
         <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
-        <Button
-                android:id="@+id/calcGradeButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/FinalGradeButton"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-                android:id="@+id/finalGradeTitle"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/q2TextView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/FinalGradeText"
+                android:text="@string/q2Text"
                 android:textColor="#000"
-                android:textSize="18sp"
-                android:paddingTop="20dp"
-                android:gravity="center_horizontal"/>
+                android:textSize="18sp" />
 
-        <TextView
-                android:id="@+id/finalGradeLabel"
+            <Spinner
+                android:id="@+id/spinnerQ2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:ems="8"
+                android:entries="@array/grades_array"
+                android:paddingLeft="15dp" />
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/q3TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q3Text"
                 android:textColor="#000"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:paddingTop="5dp"
-                android:gravity="center_horizontal"/>
+                android:textSize="18sp" />
 
-    </LinearLayout>
+            <Spinner
+                android:id="@+id/spinnerQ3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:entries="@array/grades_array"
+                android:paddingLeft="10dp" />
+        </TableRow>
 
-</RelativeLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/q4TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/q4Text"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerQ4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:entries="@array/grades_array"
+                android:paddingLeft="10dp" />
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/mtTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mtText"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerMT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:entries="@array/grades_array"
+                android:paddingLeft="10dp" />
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/finalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fnText"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerFN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:entries="@array/grades_array"
+                android:paddingLeft="10dp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/calcGradeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/FinalGradeButton" />
+
+    <TextView
+        android:id="@+id/finalGradeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:text="@string/FinalGradeText"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/finalGradeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:text=""
+        android:textColor="#000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
