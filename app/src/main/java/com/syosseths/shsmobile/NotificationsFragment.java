@@ -29,7 +29,6 @@ public class NotificationsFragment extends Fragment {
     private Switch notifSwitch;
     private TimePicker timePicker;
     private SharedPreferences sharedPreferences;
-    private Button saveButton;
     private int notifHour, notifMinute;
 
 
@@ -43,8 +42,6 @@ public class NotificationsFragment extends Fragment {
 
         notifSwitch = rootView.findViewById(R.id.notifSwitch);
         timePicker = rootView.findViewById(R.id.timePicker);
-        saveButton = rootView.findViewById(R.id.save_button);
-
         sharedPreferences = Objects.requireNonNull(getActivity()).getPreferences(MODE_PRIVATE);
 
         notifHour = sharedPreferences.getInt("notifHour", 6);
@@ -64,6 +61,7 @@ public class NotificationsFragment extends Fragment {
 
         notifSwitch.setChecked(sharedPreferences.getBoolean("notifEnabled", false));
 
+        Button saveButton = rootView.findViewById(R.id.save_button);
         saveButton.setOnClickListener((View) -> saveChanges());
 
         return rootView;
