@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class ScheduleFragment extends Fragment {
 
-    Spinner schedSpinner;
-    TextView p1Time, p2Time, p3Time, p4Time, p5Time, p6Time, p7Time, p8Time, p9Time;
+    private Spinner schedSpinner;
+    private TextView p1Time, p2Time, p3Time, p4Time, p5Time, p6Time, p7Time, p8Time, p9Time;
 
 
     @Override

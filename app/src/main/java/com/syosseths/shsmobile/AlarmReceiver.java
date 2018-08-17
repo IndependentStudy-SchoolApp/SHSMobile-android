@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +28,7 @@ import static android.content.Context.NOTIFICATION_SERVICE;
 public class AlarmReceiver extends BroadcastReceiver {
 
     private final static String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
-    public Context context;
+    private Context context;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -39,7 +40,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     private class GetDayTask extends AsyncTask<String, Void, String> {
 
-        public GetDayTask() {
+        GetDayTask() {
         }
 
         @Override

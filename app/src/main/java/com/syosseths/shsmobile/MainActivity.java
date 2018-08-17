@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    TextView bannerTextView, announcementTextView;
+    private TextView bannerTextView, announcementTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class GetDayTask extends AsyncTask<String, Void, String> {
 
-        public GetDayTask() {
+        GetDayTask() {
         }
 
         @Override

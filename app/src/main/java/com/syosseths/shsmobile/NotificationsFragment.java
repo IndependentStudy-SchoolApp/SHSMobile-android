@@ -24,11 +24,11 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class NotificationsFragment extends Fragment {
 
-    Switch notifSwitch;
-    TimePicker timePicker;
-    SharedPreferences sharedPreferences;
-    Button saveButton;
-    int notifHour, notifMinute;
+    private Switch notifSwitch;
+    private TimePicker timePicker;
+    private SharedPreferences sharedPreferences;
+    private Button saveButton;
+    private int notifHour, notifMinute;
 
 
     @TargetApi(Build.VERSION_CODES.O_MR1)
