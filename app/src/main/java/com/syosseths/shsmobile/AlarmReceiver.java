@@ -122,7 +122,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             conn.setDoInput(true);
             // Starts the query
             conn.connect();
-            int responseCode = conn.getResponseCode();
+
             is = conn.getInputStream();
 
             String contentAsString = convertStreamToString(is);
