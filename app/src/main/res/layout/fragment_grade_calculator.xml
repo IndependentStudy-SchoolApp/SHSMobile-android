@@ -41,7 +41,8 @@
                 android:id="@+id/spinnerQ1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
         </TableRow>
 
@@ -66,7 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:paddingLeft="15dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
         </TableRow>
 
         <Space
@@ -90,7 +92,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
         </TableRow>
 
         <Space
@@ -114,7 +117,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
         </TableRow>
 
         <Space
@@ -138,7 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
         </TableRow>
 
         <Space
@@ -162,7 +167,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:paddingLeft="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
         </TableRow>
 
