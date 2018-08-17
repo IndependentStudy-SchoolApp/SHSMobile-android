@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.syosseths.shsmobile.GradeCalculator.LetterGrade;
-
 import java.util.Objects;
 
 public class GradeCalculatorFragment extends Fragment {
@@ -42,18 +40,67 @@ public class GradeCalculatorFragment extends Fragment {
         Button calculateGradeButton = rootView.findViewById(R.id.calculateGradeButton);
 
         calculateGradeButton.setOnClickListener((View) -> {
-            q1 = (LetterGrade) spinnerQ1.getSelectedItem();
-            q2 = (LetterGrade) spinnerQ2.getSelectedItem();
-            q3 = (LetterGrade) spinnerQ3.getSelectedItem();
-            q4 = (LetterGrade) spinnerQ4.getSelectedItem();
-            mt = (LetterGrade) spinnerMT.getSelectedItem();
-            fn = (LetterGrade) spinnerFN.getSelectedItem();
+                    q1 = (LetterGrade) spinnerQ1.getSelectedItem();
+                    q2 = (LetterGrade) spinnerQ2.getSelectedItem();
+                    q3 = (LetterGrade) spinnerQ3.getSelectedItem();
+                    q4 = (LetterGrade) spinnerQ4.getSelectedItem();
+                    mt = (LetterGrade) spinnerMT.getSelectedItem();
+                    fn = (LetterGrade) spinnerFN.getSelectedItem();
 
-            finalGradeLabel.setText(GradeCalculator.calcGrade(q1, q2, q3, q4, mt, fn).toString());
-            }
+                    finalGradeLabel.setText(GradeCalculator.calcGrade(q1, q2, q3, q4, mt, fn).toString());
+                }
         );
 
         return rootView;
     }
 
+    enum LetterGrade {
+        A_PLUS(8), A(7), B_PLUS(6), B(5), C_PLUS(4), C(3), D(2), F(0);
+
+        private final double value, roundUpValue;
+
+        LetterGrade(double val) {
+            this.value = val;
+            this.roundUpValue = val - 0.5;
+        }
+    }
+
+    public static class GradeCalculator {
+
+        private final static double
+                QUARTER_PERCENT = 0.20,
+                MIDTERM_PERCENT = 0.08,
+                FINAL_PERCENT = 0.12;
+
+        static LetterGrade calcGrade(LetterGrade q1, LetterGrade q2, LetterGrade q3, LetterGrade q4, LetterGrade mt, LetterGrade fn) {
+            double grade =
+                    (getNumberGrade(q1) * QUARTER_PERCENT)
+                            + (getNumberGrade(q2) * QUARTER_PERCENT)
+                            + (getNumberGrade(q3) * QUARTER_PERCENT)
+                            + (getNumberGrade(q4) * QUARTER_PERCENT)
+                            + (getNumberGrade(mt) * MIDTERM_PERCENT)
+                            + (getNumberGrade(fn) * FINAL_PERCENT);
+
+            return getLetterGrade(grade);
+        }
+
+        private static LetterGrade getLetterGrade(double grade) {
+
+            for (LetterGrade letterGrade : LetterGrade.values()) {
+                if (grade >= letterGrade.roundUpValue) return letterGrade;
+            }
+
+            return LetterGrade.F;
+        }
+
+        private static double getNumberGrade(LetterGrade letterGrade) {
+            return letterGrade.value;
+        }
+
+
+        @Override
+        public String toString() {
+            return super.toString().replaceAll("_PLUS", "+");
+        }
+    }
 }
