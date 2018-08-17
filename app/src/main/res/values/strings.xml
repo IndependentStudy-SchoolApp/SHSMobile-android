@@ -12,7 +12,7 @@
     <string name="q4Text">Q4 Grade (20%):</string>
     <string name="mtText">Midterm Grade (8%):</string>
     <string name="fnText">Final Grade (12%):</string>
-    <string name="FinalGradeText">Final Class Grade:</string>
+    <string name="FinalGradeText">Final Grade:</string>
     <string name="FinalGradeButton">Calculate</string>
     <string-array name="bell_types">
         <item>Normal Period Schedule</item>
