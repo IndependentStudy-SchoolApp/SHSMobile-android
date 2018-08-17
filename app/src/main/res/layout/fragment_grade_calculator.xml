@@ -12,12 +12,12 @@
 
 
     <TextView
-        android:id="@+id/gradeCalculatorTitle"
+        android:id="@+id/grade_calculator_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:text="@string/GradeCalculator"
-        android:textColor="@color/colorPrimary"
+        android:text="@string/grade_calculator"
+        android:textColor="@color/color_primary"
         android:textSize="14sp"
         android:textStyle="normal|bold" />
 
@@ -30,15 +30,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/q1TextView"
+                android:id="@+id/q1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/q1Text"
+                android:text="@string/q1"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnerQ1"
+                android:id="@+id/q1_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="10dp"
@@ -55,15 +55,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/q2TextView"
+                android:id="@+id/q2_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/q2Text"
+                android:text="@string/q2"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnerQ2"
+                android:id="@+id/q2_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
@@ -80,40 +80,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/q3TextView"
+                android:id="@+id/q3_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/q3Text"
+                android:text="@string/q3"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnerQ3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="8"
-                android:paddingEnd="10dp"
-                android:paddingStart="10dp" />
-        </TableRow>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/q4TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/q4Text"
-                android:textColor="#000"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:id="@+id/spinnerQ4"
+                android:id="@+id/q3_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
@@ -130,15 +105,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/mtTextView"
+                android:id="@+id/q4_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mtText"
+                android:text="@string/q4"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnerMT"
+                android:id="@+id/q4_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
@@ -155,15 +130,40 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/finalTextView"
+                android:id="@+id/mt_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fnText"
+                android:text="@string/mt"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <Spinner
-                android:id="@+id/spinnerFN"
+                android:id="@+id/mt_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp" />
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/fn_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fn"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/fn_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
@@ -182,7 +182,7 @@
         android:id="@+id/calculateGradeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/CalculateGradeButton" />
+        android:text="@string/calculate_grade" />
 
     <TextView
         android:id="@+id/finalGradeTitle"
@@ -190,7 +190,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingTop="20dp"
-        android:text="@string/FinalGradeText"
+        android:text="@string/final_grade"
         android:textColor="#000"
         android:textSize="18sp" />
 

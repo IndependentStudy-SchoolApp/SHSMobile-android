@@ -43,7 +43,7 @@ public class NotificationsFragment extends Fragment {
 
         notifSwitch = rootView.findViewById(R.id.notifSwitch);
         timePicker = rootView.findViewById(R.id.timePicker);
-        saveButton = rootView.findViewById(R.id.saveButton);
+        saveButton = rootView.findViewById(R.id.save_button);
 
         sharedPreferences = Objects.requireNonNull(getActivity()).getPreferences(MODE_PRIVATE);
 

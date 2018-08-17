@@ -14,17 +14,17 @@
 
 
     <TextView
-        android:id="@+id/bellTitle"
+        android:id="@+id/schedule_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:text="@string/Schedule"
-        android:textColor="@color/colorPrimary"
+        android:text="@string/schedule"
+        android:textColor="@color/color_primary"
         android:textSize="14sp"
         android:textStyle="normal|bold" />
 
     <Spinner
-        android:id="@+id/spinner_bellschedules"
+        android:id="@+id/schedule_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="-8dp"
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p1Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p1Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p2Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p2Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p3Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p3Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p4Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p4Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p5Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p5Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -166,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p6Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p6Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -190,7 +190,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p7Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p7Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -214,7 +214,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p8Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -224,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p8Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
 
@@ -238,7 +238,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/p9Label"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -248,7 +248,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="32dp"
                 android:text="@string/p9Time"
-                android:textColor="#000"
+                android:textColor="@android:color/black"
                 android:textSize="18sp" />
         </TableRow>
     </TableLayout>

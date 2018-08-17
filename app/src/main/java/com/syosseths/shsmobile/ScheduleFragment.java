@@ -21,7 +21,7 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        schedSpinner = rootView.findViewById(R.id.spinner_bellschedules);
+        schedSpinner = rootView.findViewById(R.id.schedule_spinner);
         p1Time = rootView.findViewById(R.id.p1Time);
         p2Time = rootView.findViewById(R.id.p2Time);
         p3Time = rootView.findViewById(R.id.p3Time);

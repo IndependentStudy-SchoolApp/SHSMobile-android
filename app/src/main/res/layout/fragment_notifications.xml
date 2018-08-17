@@ -13,26 +13,26 @@
     tools:context="com.syosseths.shsmobile.MainActivity">
 
     <TextView
-        android:id="@+id/notificationsTitle"
+        android:id="@+id/notifications_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:text="@string/Notifications"
-        android:textColor="@color/colorPrimary"
+        android:text="@string/notifications"
+        android:textColor="@color/color_primary"
         android:textSize="14sp"
         android:textStyle="normal|bold" />
 
     <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/daily_notif_table_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/daily_notif_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="@string/dailyNotif"
+            android:text="@string/daily_notif"
             android:textColor="#000"
             android:textSize="18sp" />
 
@@ -54,11 +54,11 @@
         android:background="?attr/colorPrimary" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/notif_time_title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:text="@string/notifTime"
+        android:text="@string/notif_time"
         android:textColor="#000"
         android:textSize="18sp" />
 
@@ -79,7 +79,7 @@
 
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/save_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

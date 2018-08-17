@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        bannerTextView = findViewById(R.id.bannerTextView);
-        announcementTextView = findViewById(R.id.announcementTextView);
+        bannerTextView = findViewById(R.id.banner_text_view);
+        announcementTextView = findViewById(R.id.announcement_text_view);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);

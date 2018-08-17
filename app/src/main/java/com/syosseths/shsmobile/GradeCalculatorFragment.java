@@ -29,12 +29,12 @@ public class GradeCalculatorFragment extends Fragment {
         finalGradeLabel = rootView.findViewById(R.id.finalGradeLabel);
 
         Spinner[] spinners = new Spinner[6];
-        spinners[0] = (spinnerQ1 = rootView.findViewById(R.id.spinnerQ1));
-        spinners[1] = (spinnerQ2 = rootView.findViewById(R.id.spinnerQ2));
-        spinners[2] = (spinnerQ3 = rootView.findViewById(R.id.spinnerQ3));
-        spinners[3] = (spinnerQ4 = rootView.findViewById(R.id.spinnerQ4));
-        spinners[4] = (spinnerMT = rootView.findViewById(R.id.spinnerMT));
-        spinners[5] = (spinnerFN = rootView.findViewById(R.id.spinnerFN));
+        spinners[0] = (spinnerQ1 = rootView.findViewById(R.id.q1_spinner));
+        spinners[1] = (spinnerQ2 = rootView.findViewById(R.id.q2_spinner));
+        spinners[2] = (spinnerQ3 = rootView.findViewById(R.id.q3_spinner));
+        spinners[3] = (spinnerQ4 = rootView.findViewById(R.id.q4_spinner));
+        spinners[4] = (spinnerMT = rootView.findViewById(R.id.mt_spinner));
+        spinners[5] = (spinnerFN = rootView.findViewById(R.id.fn_spinner));
         for (Spinner spinner : spinners) {
             spinner.setAdapter(new ArrayAdapter<>(Objects.requireNonNull(getContext()), android.R.layout.simple_spinner_item, LetterGrade.values()));
         }
