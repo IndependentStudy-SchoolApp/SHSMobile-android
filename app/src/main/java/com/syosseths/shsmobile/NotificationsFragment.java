@@ -40,7 +40,7 @@ public class NotificationsFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        notifSwitch = rootView.findViewById(R.id.notifSwitch);
+        notifSwitch = rootView.findViewById(R.id.notif_switch);
         timePicker = rootView.findViewById(R.id.timePicker);
         sharedPreferences = Objects.requireNonNull(getActivity()).getPreferences(MODE_PRIVATE);
 
