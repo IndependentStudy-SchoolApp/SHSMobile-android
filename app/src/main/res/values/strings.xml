@@ -13,7 +13,7 @@
     <string name="mtText">Midterm Grade (8%):</string>
     <string name="fnText">Final Grade (12%):</string>
     <string name="FinalGradeText">Final Grade:</string>
-    <string name="FinalGradeButton">Calculate</string>
+    <string name="CalculateGradeButton">Calculate</string>
     <string-array name="bell_types">
         <item>Normal Period Schedule</item>
         <item>2 Hour Delay Schedule</item>
