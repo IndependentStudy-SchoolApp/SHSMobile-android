@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "515089349122",
+    "firebase_url": "https://shsmobile-498ff.firebaseio.com",
+    "project_id": "shsmobile-498ff",
+    "storage_bucket": "shsmobile-498ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515089349122:android:1a62444228936743",
+        "android_client_info": {
+          "package_name": "com.syosseths.shsmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515089349122-mu9eldkumqrgumg9fu6cd17h7mt8phkr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.syosseths.shsmobile",
+            "certificate_hash": "3282e23a956754061c4232d9d4519736424857ce"
+          }
+        },
+        {
+          "client_id": "515089349122-l5c7cn71udjtmqlpb1f9civn6bkpi6pn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA76rXt2RZwes8DD3DmCPkSmED_6hYmX4s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515089349122-l5c7cn71udjtmqlpb1f9civn6bkpi6pn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
