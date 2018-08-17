@@ -65,7 +65,7 @@ public class GradeCalculatorFragment extends Fragment {
         }
     }
 
-    public static class GradeCalculator {
+    static class GradeCalculator {
 
         private final static double
                 QUARTER_PERCENT = 0.20,
