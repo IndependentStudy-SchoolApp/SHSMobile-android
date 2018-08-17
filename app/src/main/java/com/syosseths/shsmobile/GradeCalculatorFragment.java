@@ -63,6 +63,12 @@ public class GradeCalculatorFragment extends Fragment {
             this.value = val;
             this.roundUpValue = val - 0.5;
         }
+
+        @Override
+        public String toString() {
+            return super.toString().replaceAll("_PLUS", "+");
+        }
+
     }
 
     static class GradeCalculator {
@@ -95,12 +101,6 @@ public class GradeCalculatorFragment extends Fragment {
 
         private static double getNumberGrade(LetterGrade letterGrade) {
             return letterGrade.value;
-        }
-
-
-        @Override
-        public String toString() {
-            return super.toString().replaceAll("_PLUS", "+");
         }
     }
 }
