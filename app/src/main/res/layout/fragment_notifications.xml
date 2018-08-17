@@ -1,99 +1,91 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.syosseths.shsmobile.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.syosseths.shsmobile.MainActivity">
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+    <TextView
+        android:id="@+id/notificationsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/Notifications"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
 
-        <TextView
-            android:text="@string/Notifications"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/notificationsTitle"
-                android:textStyle="normal|bold"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimary"
-                android:paddingBottom="20dp"/>
-
-        <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tableRow1">
-
-            <TextView
-                    android:text="@string/dailyNotif"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView1"
-                    android:textSize="18sp"
-                    android:textColor="#000"
-                    android:layout_gravity="start"/>
-
-            <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/notifSwitch"
-                    android:gravity="start"
-                    android:paddingStart="160dp"
-                    android:checked="true"/>
-
-        </TableRow>
-
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
-                android:text="@string/notifTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_gravity="start"/>
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/dailyNotif"
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-        <TimePicker
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/timePicker"
-                tools:timePickerMode="spinner"
-                android:layout_gravity="center"/>
+        <Switch
+            android:id="@+id/notifSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:gravity="start"
+            android:paddingStart="160dp" />
+
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="?attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/notifTime"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:timePickerMode="spinner" />
 
 
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="?attr/colorPrimary"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="-15dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="-15dp"
+        android:layout_marginTop="15dp"
+        android:background="?attr/colorPrimary" />
 
 
-        <Button
-                android:text="@string/save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/saveButton"
-                style="@style/Widget.AppCompat.Button"
-                android:textAlignment="center"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/saveButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="@string/save"
+        android:textAlignment="center" />
 
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>
