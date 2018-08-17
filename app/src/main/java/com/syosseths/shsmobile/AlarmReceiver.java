@@ -99,7 +99,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                                 .setColor(Color.argb(100, 255, 0, 0)); //text color on notification
 
                 // Sets an ID for the notification
-                int mNotificationId = 001;
+                int mNotificationId = 1;
 
                 NotificationManager mNotifyMgr =
                         (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
