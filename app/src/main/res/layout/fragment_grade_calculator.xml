@@ -182,7 +182,7 @@
         android:id="@+id/calculateGradeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/FinalGradeButton" />
+        android:text="@string/CalculateGradeButton" />
 
     <TextView
         android:id="@+id/finalGradeTitle"
@@ -200,8 +200,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingTop="5dp"
-        android:text=""
-        android:textColor="#000"
+        android:textColor="@android:color/black"
         android:textSize="28sp"
         android:textStyle="bold" />
 
