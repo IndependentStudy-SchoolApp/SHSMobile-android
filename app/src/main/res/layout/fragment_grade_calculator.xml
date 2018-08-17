@@ -12,11 +12,11 @@
 
 
     <TextView
-        android:id="@+id/gradecalcTitle"
+        android:id="@+id/gradeCalculatorTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:text="@string/tab_gradecalculator"
+        android:text="@string/GradeCalculator"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         android:textStyle="normal|bold" />
@@ -41,7 +41,6 @@
                 android:id="@+id/spinnerQ1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/grades_array"
                 android:paddingLeft="10dp" />
 
         </TableRow>
@@ -67,7 +66,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:entries="@array/grades_array"
                 android:paddingLeft="15dp" />
         </TableRow>
 
@@ -92,7 +90,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:entries="@array/grades_array"
                 android:paddingLeft="10dp" />
         </TableRow>
 
@@ -117,7 +114,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:entries="@array/grades_array"
                 android:paddingLeft="10dp" />
         </TableRow>
 
@@ -142,7 +138,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:entries="@array/grades_array"
                 android:paddingLeft="10dp" />
         </TableRow>
 
@@ -167,7 +162,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="8"
-                android:entries="@array/grades_array"
                 android:paddingLeft="10dp" />
 
         </TableRow>
@@ -179,7 +173,7 @@
         android:layout_height="20dp" />
 
     <Button
-        android:id="@+id/calcGradeButton"
+        android:id="@+id/calculateGradeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/FinalGradeButton" />

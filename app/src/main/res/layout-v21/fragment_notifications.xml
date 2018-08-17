@@ -19,7 +19,7 @@
             android:paddingRight="15dp">
 
         <TextView
-                android:text="@string/tab_notifications"
+            android:text="@string/Notifications"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/notificationsTitle"

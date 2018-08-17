@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.syosseths.shsmobile.GradeCalculator.LetterGrade;
 
 import java.util.Objects;
@@ -18,7 +19,6 @@ public class GradeCalculatorFragment extends Fragment {
 
     private LetterGrade q1, q2, q3, q4, mt, fn;
     private TextView finalGradeLabel;
-    private Button calcGradeButton;
     private Spinner spinnerQ1, spinnerQ2, spinnerQ3, spinnerQ4, spinnerMT, spinnerFN;
 
     @Override
@@ -39,9 +39,9 @@ public class GradeCalculatorFragment extends Fragment {
             spinner.setAdapter(new ArrayAdapter<>(Objects.requireNonNull(getContext()), android.R.layout.simple_spinner_item, LetterGrade.values()));
         }
 
-        calcGradeButton = rootView.findViewById(R.id.calcGradeButton);
+        Button calculateGradeButton = rootView.findViewById(R.id.calculateGradeButton);
 
-        calcGradeButton.setOnClickListener((View) -> {
+        calculateGradeButton.setOnClickListener((View) -> {
             q1 = (LetterGrade) spinnerQ1.getSelectedItem();
             q2 = (LetterGrade) spinnerQ2.getSelectedItem();
             q3 = (LetterGrade) spinnerQ3.getSelectedItem();

@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
-                android:text="@string/tab_bellschedule"
+            android:text="@string/Schedule"
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="normal|bold"/>

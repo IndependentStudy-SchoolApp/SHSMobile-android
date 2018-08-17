@@ -1,29 +1,19 @@
 <resources>
     <string name="app_name">SHS Mobile</string>
-    <string name="tab_gradecalculator">Grade Calculator</string>
-    <string name="tab_notifications">R &amp; W Day Notifications</string>
-    <string name="tab_bellschedule">Period Schedule</string>
+    <string name="GradeCalculator">Grade Calculator</string>
+    <string name="Notifications">R &amp; W Day Notifications</string>
+    <string name="Schedule">Period Schedule</string>
     <string name="notifTime">Notification Time</string>
     <string name="dailyNotif">Daily Notifications</string>
     <string name="save">Save changes</string>
-    <string name="q1Text">1st Q Grade (20%):</string>
-    <string name="q2Text">2nd Q Grade (20%):</string>
-    <string name="q3Text">3rd Q Grade (20%):</string>
-    <string name="q4Text">4th Q Grade (20%):</string>
+    <string name="q1Text">Q1 Grade (20%):</string>
+    <string name="q2Text">Q2 Grade (20%):</string>
+    <string name="q3Text">Q3 Grade (20%):</string>
+    <string name="q4Text">Q4 Grade (20%):</string>
     <string name="mtText">Midterm Grade (8%):</string>
     <string name="fnText">Final Grade (12%):</string>
     <string name="FinalGradeText">Final Class Grade:</string>
     <string name="FinalGradeButton">Calculate</string>
-    <string-array name="grades_array">
-        <item>A+</item>
-        <item>A</item>
-        <item>B+</item>
-        <item>B</item>
-        <item>C+</item>
-        <item>C</item>
-        <item>D</item>
-        <item>F</item>
-    </string-array>
     <string-array name="bell_types">
         <item>Normal Period Schedule</item>
         <item>2 Hour Delay Schedule</item>
