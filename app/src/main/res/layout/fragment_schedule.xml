@@ -32,7 +32,7 @@
                 android:id="@+id/spinner_bellschedules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-8dp"
+            android:layout_marginStart="-8dp"
                 android:entries="@array/bell_types"
                 android:paddingBottom="15dp"/>
 
@@ -59,7 +59,7 @@
                         android:id="@+id/p1Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p1Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -83,7 +83,7 @@
                         android:id="@+id/p2Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p2Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -107,7 +107,7 @@
                         android:id="@+id/p3Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p3Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -131,7 +131,7 @@
                         android:id="@+id/p4Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p4Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -155,7 +155,7 @@
                         android:id="@+id/p5Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p5Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -179,7 +179,7 @@
                         android:id="@+id/p6Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p6Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -203,7 +203,7 @@
                         android:id="@+id/p7Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p7Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -227,7 +227,7 @@
                         android:id="@+id/p8Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p8Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
@@ -251,7 +251,7 @@
                         android:id="@+id/p9Time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="32dp"
+                    android:paddingStart="32dp"
                         android:text="@string/p9Time"
                         android:textColor="#000"
                         android:textSize="18sp"/>
