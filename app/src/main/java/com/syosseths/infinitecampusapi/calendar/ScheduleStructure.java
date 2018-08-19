@@ -20,7 +20,7 @@
 */
 
 
-package calendar;
+package com.syosseths.infinitecampusapi.calendar;
 
 import org.json.JSONException;
 import org.json.JSONObject;

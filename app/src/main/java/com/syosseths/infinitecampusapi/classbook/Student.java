@@ -15,12 +15,13 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package classbook;
+package com.syosseths.infinitecampusapi.classbook;
+
+import com.syosseths.infinitecampusapi.calendar.Calendar;
+import com.syosseths.infinitecampusapi.district.DistrictInfo;
 
 import java.util.ArrayList;
 
-import calendar.Calendar;
-import district.DistrictInfo;
 import nu.xom.Element;
 
 public class Student {

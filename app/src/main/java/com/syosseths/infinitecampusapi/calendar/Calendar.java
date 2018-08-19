@@ -19,7 +19,7 @@
  and should not be interpreted as representing official policies, either expressed or implied, of the FreeBSD Project.
 */
 
-package calendar;
+package com.syosseths.infinitecampusapi.calendar;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -19,7 +19,10 @@
  and should not be interpreted as representing official policies, either expressed or implied, of the FreeBSD Project.
 */
 
+package com.syosseths.infinitecampusapi;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.syosseths.infinitecampusapi.district.DistrictInfo;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -28,8 +31,6 @@ import java.net.URLEncoder;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
-
-import district.DistrictInfo;
 
 public class CoreManager {
     private ObjectMapper mapper = new ObjectMapper();

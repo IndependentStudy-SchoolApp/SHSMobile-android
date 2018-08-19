@@ -49,5 +49,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'junit:junit:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    implementation files('libs/jackson-annotations-2.5.1.jar')
+    implementation files('libs/jackson-core-2.5.1.jar')
+    implementation files('libs/jackson-databind-2.5.1.jar')
+    implementation files('libs/xom-1.2.10.jar')
 }
 apply plugin: 'com.google.gms.google-services'

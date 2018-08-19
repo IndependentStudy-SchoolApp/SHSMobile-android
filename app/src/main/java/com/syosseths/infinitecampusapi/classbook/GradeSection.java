@@ -15,7 +15,7 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-package classbook;
+package com.syosseths.infinitecampusapi.classbook;
 
 import nu.xom.Element;
 

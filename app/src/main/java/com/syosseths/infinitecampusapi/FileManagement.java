@@ -15,6 +15,8 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+package com.syosseths.infinitecampusapi;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

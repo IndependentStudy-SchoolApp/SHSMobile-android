@@ -15,6 +15,11 @@
 	along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+package com.syosseths.infinitecampusapi;
+
+import com.syosseths.infinitecampusapi.classbook.ClassbookManager;
+import com.syosseths.infinitecampusapi.classbook.Student;
+
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.FileWriter;
@@ -22,8 +27,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 
-import classbook.ClassbookManager;
-import classbook.Student;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;

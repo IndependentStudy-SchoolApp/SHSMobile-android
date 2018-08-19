@@ -1,4 +1,4 @@
-package district;
+package com.syosseths.infinitecampusapi.district;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
