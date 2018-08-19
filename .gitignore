@@ -1,3 +1,9 @@
+# nodejs configuration
+config.json
+config.js
+.openode
+node_modules/
+
 # Built application files
 *.apk
 *.ap_
