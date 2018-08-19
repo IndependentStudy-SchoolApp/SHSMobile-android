@@ -1,1 +1,1 @@
-SHSMobile
+SHSMobile-android
