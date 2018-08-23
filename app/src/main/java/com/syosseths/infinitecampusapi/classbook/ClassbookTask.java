@@ -25,11 +25,11 @@ public class ClassbookTask {
     public String taskID;
     public String name;
     public float weight;
-    public boolean isWeighted = false;
+    public boolean isWeighted;
     // hasValidGroup
     // hasValidWeightedGroup
     // locked
-    public boolean gradeBookPosted = false;
+    public boolean gradeBookPosted;
     public int taskSeq;
     public int termID;
     public String termName;

@@ -26,7 +26,7 @@ public class ClassbookGroup {
     public String name;
     public float weight;
     public int seq;
-    public boolean notGraded = false;
+    public boolean notGraded;
     //hidePortal
     //hasValidScore
     //composite
