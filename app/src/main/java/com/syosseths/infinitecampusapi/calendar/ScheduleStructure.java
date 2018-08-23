@@ -65,11 +65,7 @@ public class ScheduleStructure {
         grade = scheduleElement.getAttributeValue("grade");
         active = scheduleElement.getAttributeValue("active").equalsIgnoreCase("true");
         primary = scheduleElement.getAttributeValue("primary");
-        if (scheduleElement.getAttributeValue("default") != null) {
-            is_default = scheduleElement.getAttributeValue("default").equalsIgnoreCase("true");
-        } else {
-            is_default = false;
-        }
+        is_default = scheduleElement.getAttributeValue("default") != null && scheduleElement.getAttributeValue("default").equalsIgnoreCase("true");
 
         try {
             startDate = new SimpleDateFormat("MM/dd/yy", Locale.ENGLISH).parse(scheduleElement.getAttributeValue("startDate"));
