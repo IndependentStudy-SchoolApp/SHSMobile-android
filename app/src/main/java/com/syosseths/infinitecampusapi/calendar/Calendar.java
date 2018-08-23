@@ -66,12 +66,12 @@ public class Calendar {
     }
 
     public String getInfoString() {
-        String returnString = "Information for Calendar \'" + name + "\':\nSchool ID: " + schoolID + "\nCalendar ID: " + calendarID + "\nEnding Year: " + endYear + "\n\n===Schedules===";
+        StringBuilder returnString = new StringBuilder("Information for Calendar \'" + name + "\':\nSchool ID: " + schoolID + "\nCalendar ID: " + calendarID + "\nEnding Year: " + endYear + "\n\n===Schedules===");
 
         for (ScheduleStructure s : schedules)
-            returnString += "\n" + s.getInfoString();
+            returnString.append("\n").append(s.getInfoString());
 
-        return returnString;
+        return returnString.toString();
     }
 
     public String getName() {

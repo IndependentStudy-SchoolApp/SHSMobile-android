@@ -32,9 +32,9 @@ public class ClassbookManager {
     }
 
     public String getInfoString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (PortalClassbook p : portalclassbooks)
-            str += "\n" + p.getInfoString();
-        return str;
+            str.append("\n").append(p.getInfoString());
+        return str.toString();
     }
 }

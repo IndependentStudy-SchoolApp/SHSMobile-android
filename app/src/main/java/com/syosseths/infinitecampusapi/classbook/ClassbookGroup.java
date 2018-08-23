@@ -64,11 +64,11 @@ public class ClassbookGroup {
     }
 
     public String getInfoString() {
-        String str = name + (name.length() < 16 ? "\t" : "") + "\t(" + (weight > 0 ? "Weight: " + weight + ", " : "") + "Grade: " + letterGrade + ", " + formattedPercentage + "%)";
+        StringBuilder str = new StringBuilder(name + (name.length() < 16 ? "\t" : "") + "\t(" + (weight > 0 ? "Weight: " + weight + ", " : "") + "Grade: " + letterGrade + ", " + formattedPercentage + "%)");
 
         for (ClassbookActivity a : activities)
-            str += "\n\t" + a.getInfoString().replace("\n", "\n\t");
+            str.append("\n\t").append(a.getInfoString().replace("\n", "\n\t"));
 
-        return str;
+        return str.toString();
     }
 }

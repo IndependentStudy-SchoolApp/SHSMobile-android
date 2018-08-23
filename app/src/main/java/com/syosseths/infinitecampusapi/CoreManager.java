@@ -33,7 +33,6 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 public class CoreManager {
-    private ObjectMapper mapper = new ObjectMapper();
     private String cookies = "";
     private DistrictInfo distInfo;
     private String districtCode;
@@ -41,6 +40,7 @@ public class CoreManager {
     public CoreManager(String districtCode) {
         this.districtCode = districtCode;
         try {
+            ObjectMapper mapper = new ObjectMapper();
             distInfo = mapper.readValue(new URL("https://mobile.infinitecampus.com/mobile/checkDistrict?districtCode=" + districtCode), DistrictInfo.class);
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,14 +74,14 @@ public class CoreManager {
     }
 
     public String getContent(URL url, boolean altercookies) {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         try {
             HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
             con.setRequestProperty("Cookie", cookies); //Retain our session
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String input;
             while ((input = br.readLine()) != null) {
-                s += input + "\n";
+                s.append(input).append("\n");
             }
             br.close();
 
@@ -105,6 +105,6 @@ public class CoreManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return s;
+        return s.toString();
     }
 }

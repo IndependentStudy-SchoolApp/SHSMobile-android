@@ -34,11 +34,11 @@ public class PortalClassbook {
     }
 
     public String getInfoString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (Student s : students)
             for (Classbook c : s.classbooks) {
-                str += c.getInfoString();
+                str.append(c.getInfoString());
             }
-        return str;
+        return str.toString();
     }
 }

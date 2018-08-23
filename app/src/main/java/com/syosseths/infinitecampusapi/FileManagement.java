@@ -38,9 +38,11 @@ public class FileManagement {
             code = reader.readLine();
             reader.close();
             input.close();
-        } catch (IOException exception) {
-            System.err.print(exception);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
         return code;
     }
 
@@ -53,8 +55,8 @@ public class FileManagement {
             password = reader.readLine();
             reader.close();
             input.close();
-        } catch (IOException exception) {
-            System.err.print(exception);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return password;
     }
@@ -68,8 +70,8 @@ public class FileManagement {
             username = reader.readLine();
             reader.close();
             input.close();
-        } catch (IOException exception) {
-            System.err.print(exception);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return username;
     }

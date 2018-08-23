@@ -42,9 +42,9 @@ public class Classbook {
     }
 
     public String getInfoString() {
-        String str = "\nTasks for " + courseName + ", with teacher " + teacherDisplay + " and class ID " + courseNumber + ", " + termName;
+        StringBuilder str = new StringBuilder("\nTasks for " + courseName + ", with teacher " + teacherDisplay + " and class ID " + courseNumber + ", " + termName);
         for (ClassbookTask t : tasks)
-            str += "\n" + t.getInfoString();
-        return str;
+            str.append("\n").append(t.getInfoString());
+        return str.toString();
     }
 }

@@ -67,6 +67,7 @@ public class ClassbookTask {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
+            e.printStackTrace();
         }
 
         try {
@@ -75,6 +76,7 @@ public class ClassbookTask {
             for (int i = 0; i < task.getFirstChildElement("tasks").getChildElements("ClassbookTask").size(); i++)
                 tasks.add(new ClassbookTask(task.getFirstChildElement("tasks").getChildElements("ClassbookTask").get(i)));
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
         letterGrade = (letterGrade == null ? "?" : letterGrade);
@@ -82,11 +84,11 @@ public class ClassbookTask {
     }
 
     public String getInfoString() {
-        String str = "Task: " + name + ", " + termName + " " + letterGrade + " " + formattedPercentage + "%";
+        StringBuilder str = new StringBuilder("Task: " + name + ", " + termName + " " + letterGrade + " " + formattedPercentage + "%");
         for (ClassbookTask t : tasks)
-            str += "\n\t" + t.getInfoString().replace("\n", "\n\t");
+            str.append("\n\t").append(t.getInfoString().replace("\n", "\n\t"));
         for (ClassbookGroup b : groups)
-            str += "\n\t" + b.getInfoString().replace("\n", "\n\t");
-        return str;
+            str.append("\n\t").append(b.getInfoString().replace("\n", "\n\t"));
+        return str.toString();
     }
 }

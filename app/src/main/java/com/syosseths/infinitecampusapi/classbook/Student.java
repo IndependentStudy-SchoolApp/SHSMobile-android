@@ -58,7 +58,8 @@ public class Student {
         for (int i = 0; i < userElement.getChildElements("Classbook").size(); i++) {
             try {
                 classbooks.add(new Classbook(userElement.getChildElements("Classbook").get(i)));
-            } catch (NullPointerException x) {
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -69,12 +70,12 @@ public class Student {
 
     //TODO: Load news items
     public String getInfoString() {
-        String userInfo = "Information for " + firstName + " " + middleName + " " + lastName + ":\nStudent Number: " + studentNumber + "\nPerson ID: " + personID + "\nPicture URL: " + getPictureURL() + "\nIs Guardian? " + isGuardian + "\n\n===Calendars===";
+        StringBuilder userInfo = new StringBuilder("Information for " + firstName + " " + middleName + " " + lastName + ":\nStudent Number: " + studentNumber + "\nPerson ID: " + personID + "\nPicture URL: " + getPictureURL() + "\nIs Guardian? " + isGuardian + "\n\n===Calendars===");
 
         for (Calendar c : calendars) {
-            userInfo += "\n" + c.getInfoString();
+            userInfo.append("\n").append(c.getInfoString());
         }
 
-        return userInfo;
+        return userInfo.toString();
     }
 }
