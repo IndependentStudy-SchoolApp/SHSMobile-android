@@ -28,7 +28,7 @@ public class Classbook {
     public String sectionNumber;
     public String teacherDisplay;
 
-    public ArrayList<ClassbookTask> tasks = new ArrayList<ClassbookTask>();
+    public ArrayList<ClassbookTask> tasks = new ArrayList<>();
 
     public Classbook(Element classbook) {
         termName = classbook.getAttributeValue("termName");

@@ -41,8 +41,8 @@ public class ClassbookTask {
     public String formattedPercentage;
     public int curveID;
 
-    public ArrayList<ClassbookTask> tasks = new ArrayList<ClassbookTask>();
-    public ArrayList<ClassbookGroup> groups = new ArrayList<ClassbookGroup>();
+    public ArrayList<ClassbookTask> tasks = new ArrayList<>();
+    public ArrayList<ClassbookGroup> groups = new ArrayList<>();
 
     public ClassbookTask(Element task) {
 

@@ -39,7 +39,7 @@ public class ClassbookGroup {
     public float pointsEarned;
     public float totalPointsPossible;
 
-    public ArrayList<ClassbookActivity> activities = new ArrayList<ClassbookActivity>();
+    public ArrayList<ClassbookActivity> activities = new ArrayList<>();
 
     public ClassbookGroup(Element group) {
         activityID = group.getAttributeValue("activityID");

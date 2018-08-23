@@ -23,7 +23,7 @@ import nu.xom.Element;
 import nu.xom.Elements;
 
 public class ClassbookManager {
-    ArrayList<PortalClassbook> portalclassbooks = new ArrayList<PortalClassbook>();
+    ArrayList<PortalClassbook> portalclassbooks = new ArrayList<>();
 
     public ClassbookManager(Element classbook) {
         Elements e = classbook.getChildElements("PortalClassbook");

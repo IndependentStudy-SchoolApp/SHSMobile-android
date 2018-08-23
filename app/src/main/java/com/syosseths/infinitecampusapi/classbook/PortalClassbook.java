@@ -24,7 +24,7 @@ import nu.xom.Elements;
 
 public class PortalClassbook {
     public String sectionID;
-    public ArrayList<Student> students = new ArrayList<Student>();
+    public ArrayList<Student> students = new ArrayList<>();
 
     public PortalClassbook(Element classbookElement) {
         this.sectionID = classbookElement.getAttributeValue("sectionID");

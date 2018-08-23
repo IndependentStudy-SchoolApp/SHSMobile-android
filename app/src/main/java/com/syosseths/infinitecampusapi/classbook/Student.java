@@ -33,9 +33,9 @@ public class Student {
     public String middleName;
     public String isGuardian;
 
-    public ArrayList<Calendar> calendars = new ArrayList<Calendar>();
+    public ArrayList<Calendar> calendars = new ArrayList<>();
     public GradingDetailSummary gradeDetailSummary;
-    public ArrayList<Classbook> classbooks = new ArrayList<Classbook>();
+    public ArrayList<Classbook> classbooks = new ArrayList<>();
 
     private DistrictInfo distInfo;
 

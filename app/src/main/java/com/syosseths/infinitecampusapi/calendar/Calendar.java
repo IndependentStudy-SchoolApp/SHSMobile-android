@@ -32,7 +32,7 @@ import nu.xom.Element;
 
 public class Calendar {
     public String calendarID;
-    public List<ScheduleStructure> schedules = new ArrayList<ScheduleStructure>();
+    public List<ScheduleStructure> schedules = new ArrayList<>();
     private String name;
     private String schoolID;
     private String endYear;
