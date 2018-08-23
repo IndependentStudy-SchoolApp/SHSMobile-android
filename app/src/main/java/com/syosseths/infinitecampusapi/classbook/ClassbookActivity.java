@@ -51,6 +51,7 @@ public class ClassbookActivity {
     public boolean wysiwygSubmission;
     public boolean onlineAssessment;
 
+    @SuppressWarnings("ConstantConditions")
     public ClassbookActivity(Element activity) {
         activityID = activity.getAttributeValue("activityID");
         name = activity.getAttributeValue("name");
