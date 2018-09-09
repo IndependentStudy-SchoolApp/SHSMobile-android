@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,6 +26,12 @@ import java.util.Objects;
 import static android.content.Context.MODE_PRIVATE;
 
 public class NotificationsFragment extends Fragment {
+
+    OnFragmentInteractionListener mCallback;
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
+    }
 
     private Switch notifSwitch;
     private TimePicker timePicker;

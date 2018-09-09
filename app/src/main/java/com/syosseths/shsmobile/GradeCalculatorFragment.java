@@ -1,5 +1,6 @@
 package com.syosseths.shsmobile;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,12 @@ import android.widget.TextView;
 import java.util.Objects;
 
 public class GradeCalculatorFragment extends Fragment {
+
+    OnFragmentInteractionListener mCallback;
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
+    }
 
     private LetterGrade q1, q2, q3, q4, mt, fn;
     private TextView finalGradeLabel;
