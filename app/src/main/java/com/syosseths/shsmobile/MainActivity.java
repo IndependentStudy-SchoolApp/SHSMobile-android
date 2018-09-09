@@ -1,15 +1,20 @@
 package com.syosseths.shsmobile;
 
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
+import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
+import android.view.MenuItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,26 +30,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        GradeCalculatorFragment.OnFragmentInteractionListener,
+        ScheduleFragment.OnFragmentInteractionListener,
+        NotificationsFragment.OnFragmentInteractionListener {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
+    ActionBar actionBar;
+    private FragmentManager fragmentManager;
+    private DrawerLayout drawer;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
-    private TextView bannerTextView, announcementTextView;
+    private ViewPager viewPager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -52,75 +52,82 @@ public class MainActivity extends AppCompatActivity {
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
-            Objects.requireNonNull(getSupportActionBar()).setLogo(R.drawable.logoti);
-            getSupportActionBar().setHomeButtonEnabled(true);
-
+            actionBar = Objects.requireNonNull(getSupportActionBar());
         }
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        bannerTextView = findViewById(R.id.banner_text_view);
-        announcementTextView = findViewById(R.id.announcement_text_view);
+        if (savedInstanceState == null) {
+            Fragment fragment = null;
+            Class fragmentClass;
+            fragmentClass = GradeCalculatorFragment.class;
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+            fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();
 
-        TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+            actionBar.setTitle(R.string.home);
+        }
 
-        String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
-        new GetDayTask().execute(url);
+        drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //String url = "https://spreadsheets.google.com/tq?key=1DLzFux6KkiMEpvf5Rqn0sZz84Fdl7S-hhBc5nU4Vo-M";
+        //new GetDayTask().execute(url);
     }
 
-    // deleted code for options menu
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
-    // deleted PlaceholderFragment class here
+    }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    class SectionsPagerAdapter extends FragmentPagerAdapter {
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
 
-        SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
+        int id = item.getItemId();
+        Fragment fragment = null;
+        Class fragmentClass = null;
+
+        switch (id) {
+            case R.id.nav_home:
+                fragmentClass = HomeFragment.class;
+                actionBar.setTitle(R.string.home);
+                break;
+            case R.id.nav_grade_calculator:
+                fragmentClass = GradeCalculatorFragment.class;
+                actionBar.setTitle(R.string.grade_calculator);
+                break;
+            case R.id.nav_schedule:
+                fragmentClass = ScheduleFragment.class;
+                actionBar.setTitle(R.string.schedule);
+                break;
+            case R.id.nav_notifications:
+                fragmentClass = NotificationsFragment.class;
+                actionBar.setTitle(R.string.notifications);
+                break;
+        }
+        if (fragmentClass == null) {
+
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            // Returning the current tabs
-            switch (position) {
-                case 0:
-                    return new NotificationsFragment();
-                case 1:
-                    return new GradeCalculatorFragment();
-                case 2:
-                    return new ScheduleFragment();
-                default:
-                    return null;
-            }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3; //change to total # of tabs
-        }
+        fragmentManager.beginTransaction().replace(R.id.content, fragment).commit();
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "NOTIFICATIONS";
-                case 1:
-                    return "GRADE CALCULATOR";
-                case 2:
-                    return "PERIOD SCHEDULE";
-            }
-            return null;
-        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     private static String[] processJson(JSONObject object) {
@@ -192,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            bannerTextView.setText(dayText);
+            /*bannerTextView.setText(dayText);
 
             if (!announcementText.equals("-"))
                 announcementTextView.setText(announcementText);
@@ -200,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                 announcementTextView.setPadding(0, 0, 0, 0);
                 announcementTextView.setHeight(0);
                 announcementTextView.setText("");
-            }
+            }*/
         }
 
         private String downloadUrl(String urlString) throws IOException {
