@@ -12,16 +12,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.syosseths.shsmobile.MainActivity">
 
-    <TextView
-        android:id="@+id/notifications_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:text="@string/notifications"
-        android:textColor="@color/color_primary"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
     <TableRow
         android:id="@+id/daily_notif_table_row"
         android:layout_width="match_parent"

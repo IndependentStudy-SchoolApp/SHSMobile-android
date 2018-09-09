@@ -13,16 +13,6 @@
     tools:context="com.syosseths.shsmobile.MainActivity">
 
 
-    <TextView
-        android:id="@+id/schedule_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:text="@string/schedule"
-        android:textColor="@color/color_primary"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
     <Spinner
         android:id="@+id/schedule_spinner"
         android:layout_width="match_parent"
