@@ -1,5 +1,6 @@
 package com.syosseths.shsmobile;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ScheduleFragment extends Fragment {
+
+    OnFragmentInteractionListener mCallback;
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
+    }
 
     private Spinner schedSpinner;
     private TextView p1Time, p2Time, p3Time, p4Time, p5Time, p6Time, p7Time, p8Time, p9Time;

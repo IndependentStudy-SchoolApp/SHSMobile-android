@@ -11,16 +11,6 @@
     tools:context="com.syosseths.shsmobile.MainActivity">
 
 
-    <TextView
-        android:id="@+id/grade_calculator_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
-        android:text="@string/grade_calculator"
-        android:textColor="@color/color_primary"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -1,8 +1,17 @@
 <resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Guest User</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="our_mission"></string>
+
     <string name="app_name">SHS Mobile</string>
+    <string name="home">Home</string>
     <string name="grade_calculator">Grade Calculator</string>
-    <string name="notifications">R &amp; W Day Notifications</string>
-    <string name="schedule">Period Schedule</string>
+    <string name="notifications">Notifications</string>
+    <string name="schedule">Schedule</string>
     <string name="notif_time">Notification Time</string>
     <string name="daily_notif">Daily Notifications</string>
     <string name="save">Save changes</string>
@@ -45,4 +54,5 @@
     <string name="p7Time2">12:52 – 1:19</string>
     <string name="p8Time2">1:24 – 1:50</string>
     <string name="p9Time2">1:55 – 2:21</string>
+    <string name="action_settings">Settings</string>
 </resources>
