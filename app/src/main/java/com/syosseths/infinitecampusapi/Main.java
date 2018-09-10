@@ -63,7 +63,7 @@ public class Main {
         }
 
         try {
-            out = new PrintWriter(new BufferedWriter(new FileWriter("grades.txt")));
+            out = new PrintWriter(new BufferedWriter(new FileWriter("infinite-campus-info/grades.txt")));
         } catch (IOException e) {
             e.printStackTrace();
             return;

@@ -17,6 +17,9 @@
 
 package com.syosseths.infinitecampusapi;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,9 +32,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileManagement {
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static String getDistrictCode() {
         String code = null;
-        Path file = FileSystems.getDefault().getPath(".code.txt");
+        Path file = FileSystems.getDefault().getPath("infinite-campus-info/.code.txt");
         try {
             InputStream input = Files.newInputStream(file);
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -46,9 +50,10 @@ public class FileManagement {
         return code;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static String getPassword() {
         String password = null;
-        Path file = FileSystems.getDefault().getPath(".password.txt");
+        Path file = FileSystems.getDefault().getPath("infinite-campus-info/.password.txt");
         try {
             InputStream input = Files.newInputStream(file);
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -61,9 +66,10 @@ public class FileManagement {
         return password;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static String getUsername() {
         String username = null;
-        Path file = FileSystems.getDefault().getPath(".username.txt");
+        Path file = FileSystems.getDefault().getPath("infinite-campus-info/.username.txt");
         try {
             InputStream input = Files.newInputStream(file);
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
@@ -77,23 +83,23 @@ public class FileManagement {
     }
 
     public static void deleteGrades() {
-        File grades = new File("grades.txt");
+        File grades = new File("infinite-campus-info/grades.txt");
         grades.delete();
     }
 
     public static void deleteExisting() {
-        File existsu = new File("./.username.txt");
-        File existspw = new File("./.password.txt");
-        File existc = new File("./.code.txt");
+        File existsu = new File("./infinite-campus-info/.username.txt");
+        File existspw = new File("./infinite-campus-info/.password.txt");
+        File existc = new File("./infinite-campus-info/.code.txt");
         existc.delete();
         existsu.delete();
         existspw.delete();
     }
 
     public static boolean getExisting() {
-        File existsu = new File("./.username.txt");
-        File existspw = new File("./.password.txt");
-        File existc = new File("./.code.txt");
+        File existsu = new File("./infinite-campus-info/.username.txt");
+        File existspw = new File("./infinite-campus-info/.password.txt");
+        File existc = new File("./infinite-campus-info/.code.txt");
         return existc.exists() && existsu.exists() && existspw.exists();
     }
 
@@ -121,7 +127,7 @@ public class FileManagement {
     public static void createDistrictCodeFile(String code) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
-                PrintWriter codeFile = new PrintWriter(".code.txt");
+                PrintWriter codeFile = new PrintWriter("infinite-campus-info/.code.txt");
                 codeFile.write(code);
                 codeFile.close();
             } catch (FileNotFoundException e1) {
@@ -129,7 +135,7 @@ public class FileManagement {
             }
         } else {
             try {
-                PrintWriter codeFile = new PrintWriter(".code.txt");
+                PrintWriter codeFile = new PrintWriter("infinite-campus-info/.code.txt");
                 codeFile.write(code);
                 codeFile.close();
             } catch (FileNotFoundException e1) {
@@ -146,7 +152,7 @@ public class FileManagement {
     public static void createUsernameFile(String username) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
-                PrintWriter usernameFile = new PrintWriter(".username.txt");
+                PrintWriter usernameFile = new PrintWriter("infinite-campus-info/.username.txt");
                 usernameFile.write(username);
                 usernameFile.close();
             } catch (FileNotFoundException e1) {
@@ -154,7 +160,7 @@ public class FileManagement {
             }
         } else {
             try {
-                PrintWriter usernameFile = new PrintWriter(".username.txt");
+                PrintWriter usernameFile = new PrintWriter("infinite-campus-info/.username.txt");
                 usernameFile.write(username);
                 usernameFile.close();
             } catch (FileNotFoundException e1) {
@@ -171,7 +177,7 @@ public class FileManagement {
     public static void createPasswordFile(String password) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
-                PrintWriter passwordFile = new PrintWriter(".password.txt");
+                PrintWriter passwordFile = new PrintWriter("infinite-campus-info/.password.txt");
                 passwordFile.write(password);
                 passwordFile.close();
             } catch (FileNotFoundException e1) {
@@ -179,7 +185,7 @@ public class FileManagement {
             }
         } else {
             try {
-                PrintWriter passwordFile = new PrintWriter(".password.txt");
+                PrintWriter passwordFile = new PrintWriter("infinite-campus-info/.password.txt");
                 passwordFile.write(password);
                 passwordFile.close();
             } catch (FileNotFoundException e1) {
