@@ -22,9 +22,10 @@
 package com.syosseths.infinitecampusapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.syosseths.infinitecampusapi.district.DistrictInfo;
+import com.syosseths.infinitecampusapi.district.CampusDistrict;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -32,41 +33,50 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-class CoreManager {
-    private String cookies = "";
-    private DistrictInfo distInfo;
-    private String districtCode;
+import static com.syosseths.infinitecampusapi.Main.print;
 
-    public CoreManager(String districtCode) {
-        this.districtCode = districtCode;
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            distInfo = mapper.readValue(new URL("https://mobile.infinitecampus.com/mobile/checkDistrict?districtCode=" + districtCode), DistrictInfo.class);
-        } catch (Exception e) {
-            e.printStackTrace();
+class CoreManager {
+    private final CampusDistrict campusDistrict;
+    private String cookies;
+
+    CoreManager(String username, String password, String districtCode) throws IOException {
+        campusDistrict = new ObjectMapper().readValue(
+                new URL("https://mobile.infinitecampus.com/mobile/checkDistrict?districtCode=" + districtCode),
+                CampusDistrict.class);
+
+        boolean successfulLogin = this.attemptLogin(username, password, campusDistrict);
+        if (!successfulLogin) {
+            boolean loginFilesDeleted = FileManager.deleteLoginFiles();
+            print("Invalid Username/Password or District Code");
+            if(!loginFilesDeleted) print("Login Files Failed to Delete");
+            System.exit(Main.ERROR_INVALID_CREDENTIALS);
         }
     }
 
-    public DistrictInfo getDistrictInfo() {
-        return distInfo;
+    public CampusDistrict getCampusDistrict() {
+        return campusDistrict;
     }
 
-    public String getDistrictCode() {
-        return districtCode;
-    }
-
-    public boolean attemptLogin(String user, String pass, DistrictInfo distInfo) {
+    private boolean attemptLogin(String username, String password, CampusDistrict campusDistrict) {
         try {
-            String encodedUser = URLEncoder.encode(user, "UTF-8");
-            String encodedPass = URLEncoder.encode(pass, "UTF-8");
+            String encodedUsername = URLEncoder.encode(username, "UTF-8"),
+                    encodedPassword = URLEncoder.encode(password, "UTF-8");
 
-            URL loginURL = new URL(distInfo.getDistrictBaseURL() + "verify.jsp?nonBrowser=true&username=" + encodedUser + "&password=" + encodedPass + "&appName=" + distInfo.getDistrictAppName());
-            System.out.println("Attempting login with url: " + loginURL);
+            URL loginURL = new URL(campusDistrict.getDistrictBaseURL()
+                    + "verify.jsp?nonBrowser=true"
+                    + "&username=" + encodedUsername
+                    + "&password=" + encodedPassword
+                    + "&appName=" + campusDistrict.getDistrictAppName());
+
+            print("Attempting login with url: " + loginURL);
+
             String response = getContent(loginURL, true);
-            System.out.println("Responded with: " + response);
-            if (response.trim().equalsIgnoreCase("<authentication>success</authentication>"))
-                System.out.println("Trim returning true");
-            return true;
+            print("Responded with: " + response);
+
+            if (response.trim().equalsIgnoreCase("<authentication>success</authentication>")) {
+                print("Trim returning true");
+                return true;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,20 +98,20 @@ class CoreManager {
             StringBuilder sb = new StringBuilder();
 
             // find the cookies in the response header from the first request
-            List<String> cookie = con.getHeaderFields().get("Set-Cookie");
-            if (cookie != null) {
-                for (String cooki : cookie) {
+            List<String> cookies = con.getHeaderFields().get("Set-Cookie");
+            if (cookies != null) {
+                for (String cookie : cookies) {
                     if (sb.length() > 0) {
                         sb.append("; ");
                     }
 
                     // only want the first part of the cookie header that has the value
-                    String value = cooki.split(";")[0];
+                    String value = cookie.split(";")[0];
                     sb.append(value);
                 }
             }
             if (altercookies)
-                cookies = sb.toString();
+                this.cookies = sb.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
