@@ -31,26 +31,26 @@ import nu.xom.ParsingException;
 
 import static com.syosseths.infinitecampusapi.Main.print;
 
-class InfoLogger {
+class DataRetriever {
+    private final CoreManager core;
 
-    private CoreManager core;
-
-    InfoLogger(CoreManager core) {
+    DataRetriever(CoreManager core) {
         this.core = core;
     }
 
     public void logGrades() throws IOException, ParsingException {
-        URL timeURL = new URL(core.getDistrictInfo().getDistrictBaseURL() + "/prism?x=portal.PortalOutline&appName=" + core.getDistrictInfo().getDistrictAppName());
+        URL timeURL = new URL(core.getCampusDistrict().getDistrictBaseURL() + "/prism?x=portal.PortalOutline&appName=" + core.getCampusDistrict().getDistrictAppName());
         Builder builder = new Builder();
         Document doc = builder.build(new ByteArrayInputStream(core.getContent(timeURL, false).getBytes()));
         Element root = doc.getRootElement();
-        Student user = new Student(root.getFirstChildElement("PortalOutline").getFirstChildElement("Family").getFirstChildElement("Student"), core.getDistrictInfo());
+        Student user = new Student(root.getFirstChildElement("PortalOutline").getFirstChildElement("Family").getFirstChildElement("Student"), core.getCampusDistrict());
 
         print(user.getInfoString());
 
-        URL gradesURL = new URL(core.getDistrictInfo().getDistrictBaseURL() + "/prism?&x=portal.PortalClassbook-getClassbookForAllSections&mode=classbook&personID=" + user.personID + "&structureID=" + user.calendars.get(0).schedules.get(0).id + "&calendarID=" + user.calendars.get(0).calendarID);
+        URL gradesURL = new URL(core.getCampusDistrict().getDistrictBaseURL() + "/prism?&x=portal.PortalClassbook-getClassbookForAllSections&mode=classbook&personID=" + user.personID + "&structureID=" + user.calendars.get(0).schedules.get(0).id + "&calendarID=" + user.calendars.get(0).calendarID);
         Document doc2 = builder.build(new ByteArrayInputStream(core.getContent(gradesURL, false).getBytes()));
         ClassbookManager manager = new ClassbookManager(doc2.getRootElement().getFirstChildElement("SectionClassbooks"));
+
         print(manager.getInfoString());
 
     }
