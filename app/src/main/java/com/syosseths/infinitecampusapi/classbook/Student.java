@@ -18,32 +18,32 @@
 package com.syosseths.infinitecampusapi.classbook;
 
 import com.syosseths.infinitecampusapi.calendar.Calendar;
-import com.syosseths.infinitecampusapi.district.DistrictInfo;
+import com.syosseths.infinitecampusapi.district.CampusDistrict;
 
 import java.util.ArrayList;
 
 import nu.xom.Element;
 
 public class Student {
-    private String studentNumber;
+    private final String studentNumber;
     public boolean hasSecurityRole = false;
-    public String personID;
-    private String lastName;
-    private String firstName;
-    private String middleName;
-    private String isGuardian;
+    public final String personID;
+    private final String lastName;
+    private final String firstName;
+    private final String middleName;
+    private final String isGuardian;
 
-    public ArrayList<Calendar> calendars = new ArrayList<>();
-    private GradingDetailSummary gradeDetailSummary;
-    public ArrayList<Classbook> classbooks = new ArrayList<>();
+    public final ArrayList<Calendar> calendars = new ArrayList<>();
+    private final GradingDetailSummary gradeDetailSummary;
+    public final ArrayList<Classbook> classbooks = new ArrayList<>();
 
-    private DistrictInfo distInfo;
+    private final CampusDistrict distInfo;
 
     public Student(Element userElement) {
         this(userElement, null);
     }
 
-    public Student(Element userElement, DistrictInfo info) {
+    public Student(Element userElement, CampusDistrict info) {
         distInfo = info;
 
         studentNumber = userElement.getAttributeValue("studentNumber");

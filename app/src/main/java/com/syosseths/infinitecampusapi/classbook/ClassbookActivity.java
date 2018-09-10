@@ -20,36 +20,36 @@ package com.syosseths.infinitecampusapi.classbook;
 import nu.xom.Element;
 
 class ClassbookActivity {
-    private String activityID;
-    private String name;
-    private String abbrev;
-    private String dueDate;
-    private String assignedDate;
-    private double totalPoints;
-    private boolean active;
-    private boolean notGraded;
+    private final String activityID;
+    private final String name;
+    private final String abbrev;
+    private final String dueDate;
+    private final String assignedDate;
+    private final double totalPoints;
+    private final boolean active;
+    private final boolean notGraded;
     //hidePortal
     //seq
-    private float weight;
-    private String scoringType;
-    private boolean validScore;
-    private String scoreID;
-    private float score;
-    private boolean late;
-    private boolean missing;
-    private boolean incomplete;
-    private boolean turnedIn;
+    private final float weight;
+    private final String scoringType;
+    private final boolean validScore;
+    private final String scoreID;
+    private final float score;
+    private final boolean late;
+    private final boolean missing;
+    private final boolean incomplete;
+    private final boolean turnedIn;
     public boolean exempt;
-    private boolean cheated;
-    private boolean dropped;
-    private float percentage;
-    private String letterGrade;
-    private float weightedScore;
-    private float weightedTotalPoints;
-    private float weightedPercentage;
-    private double numericScore;
-    private boolean wysiwygSubmission;
-    private boolean onlineAssessment;
+    private final boolean cheated;
+    private final boolean dropped;
+    private final float percentage;
+    private final String letterGrade;
+    private final float weightedScore;
+    private final float weightedTotalPoints;
+    private final float weightedPercentage;
+    private final double numericScore;
+    private final boolean wysiwygSubmission;
+    private final boolean onlineAssessment;
 
     @SuppressWarnings("ConstantConditions")
     public ClassbookActivity(Element activity) {

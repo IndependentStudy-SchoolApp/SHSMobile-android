@@ -30,6 +30,8 @@ import java.util.List;
 
 import nu.xom.Element;
 
+import static com.syosseths.infinitecampusapi.Main.print;
+
 public class Calendar {
     public String calendarID;
     public List<ScheduleStructure> schedules = new ArrayList<>();
@@ -56,7 +58,7 @@ public class Calendar {
         schoolID = calendar.getAttributeValue("schoolID");
         calendarID = calendar.getAttributeValue("calendarID");
         endYear = calendar.getAttributeValue("endYear");
-        System.out.println("Calendar info string: " + getInfoString());
+        print("Calendar info string: " + getInfoString());
         for (int i = 0; i < calendar.getChildElements().size(); i++)
             schedules.add(new ScheduleStructure(calendar.getChildElements().get(i)));
     }

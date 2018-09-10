@@ -19,7 +19,7 @@ package com.syosseths.infinitecampusapi.classbook;
 
 import nu.xom.Element;
 
-public class GradingDetailSummary {
+class GradingDetailSummary {
     public GradingDetailSummary(Element grades) {
 
     }

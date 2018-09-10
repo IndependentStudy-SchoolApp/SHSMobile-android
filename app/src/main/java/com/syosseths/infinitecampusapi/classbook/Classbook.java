@@ -22,13 +22,13 @@ import java.util.ArrayList;
 import nu.xom.Element;
 
 class Classbook {
-    private String termName;
-    private String courseNumber;
-    private String courseName;
-    private String sectionNumber;
-    private String teacherDisplay;
+    private final String termName;
+    private final String courseNumber;
+    private final String courseName;
+    private final String sectionNumber;
+    private final String teacherDisplay;
 
-    private ArrayList<ClassbookTask> tasks = new ArrayList<>();
+    private final ArrayList<ClassbookTask> tasks = new ArrayList<>();
 
     public Classbook(Element classbook) {
         termName = classbook.getAttributeValue("termName");
