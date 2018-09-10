@@ -70,7 +70,7 @@ public class Student {
 
     //TODO: Load news items
     public String getInfoString() {
-        StringBuilder userInfo = new StringBuilder("Information for " + firstName + " " + middleName + " " + lastName + ":\nStudent Number: " + studentNumber + "\nPerson ID: " + personID + "\nPicture URL: " + getPictureURL() + "\nIs Guardian? " + isGuardian + "\n\n===Calendars===");
+        StringBuilder userInfo = new StringBuilder("Information for " + firstName + " " + (middleName==null ? "" : middleName + " ") + lastName + ":\nStudent Number: " + studentNumber + "\nPerson ID: " + personID + "\nPicture URL: " + getPictureURL() + "\nIs Guardian? " + isGuardian + "\n\n===Calendars===");
 
         for (Calendar c : calendars) {
             userInfo.append("\n").append(c.getInfoString());
