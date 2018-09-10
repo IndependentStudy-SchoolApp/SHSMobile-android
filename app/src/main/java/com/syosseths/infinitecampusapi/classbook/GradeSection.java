@@ -19,7 +19,7 @@ package com.syosseths.infinitecampusapi.classbook;
 
 import nu.xom.Element;
 
-public class GradeSection {
+class GradeSection {
     public String courseID;
     public String sectionID;
     public String courseNumber;

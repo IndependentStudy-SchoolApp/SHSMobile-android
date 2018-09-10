@@ -31,7 +31,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class FileManagement {
+class FileManagement {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static String getDistrictCode() {
         String code = null;
@@ -124,7 +124,7 @@ public class FileManagement {
         createPasswordFile(password);
     }
 
-    public static void createDistrictCodeFile(String code) {
+    private static void createDistrictCodeFile(String code) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
                 PrintWriter codeFile = new PrintWriter("infinite-campus-info/.code.txt");
@@ -149,7 +149,7 @@ public class FileManagement {
         }
     }
 
-    public static void createUsernameFile(String username) {
+    private static void createUsernameFile(String username) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
                 PrintWriter usernameFile = new PrintWriter("infinite-campus-info/.username.txt");
@@ -174,7 +174,7 @@ public class FileManagement {
         }
     }
 
-    public static void createPasswordFile(String password) {
+    private static void createPasswordFile(String password) {
         if (!System.getProperty("os.name").contains("windows")) {
             try {
                 PrintWriter passwordFile = new PrintWriter("infinite-campus-info/.password.txt");

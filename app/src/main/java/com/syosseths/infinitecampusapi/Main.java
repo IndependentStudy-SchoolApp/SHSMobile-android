@@ -76,7 +76,7 @@ public class Main {
         return core;
     }
 
-    public static void createFile(String name) {
+    private static void createFile(String name) {
         try {
             out = new PrintWriter(new BufferedWriter(new FileWriter("infinite-campus-info/" + name + ".txt")));
         } catch (IOException e) {

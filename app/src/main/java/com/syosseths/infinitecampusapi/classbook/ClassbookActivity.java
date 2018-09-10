@@ -19,37 +19,37 @@ package com.syosseths.infinitecampusapi.classbook;
 
 import nu.xom.Element;
 
-public class ClassbookActivity {
-    public String activityID;
-    public String name;
-    public String abbrev;
-    public String dueDate;
-    public String assignedDate;
-    public double totalPoints;
-    public boolean active;
-    public boolean notGraded;
+class ClassbookActivity {
+    private String activityID;
+    private String name;
+    private String abbrev;
+    private String dueDate;
+    private String assignedDate;
+    private double totalPoints;
+    private boolean active;
+    private boolean notGraded;
     //hidePortal
     //seq
-    public float weight;
-    public String scoringType;
-    public boolean validScore;
-    public String scoreID;
-    public float score;
-    public boolean late;
-    public boolean missing;
-    public boolean incomplete;
-    public boolean turnedIn;
+    private float weight;
+    private String scoringType;
+    private boolean validScore;
+    private String scoreID;
+    private float score;
+    private boolean late;
+    private boolean missing;
+    private boolean incomplete;
+    private boolean turnedIn;
     public boolean exempt;
-    public boolean cheated;
-    public boolean dropped;
-    public float percentage;
-    public String letterGrade;
-    public float weightedScore;
-    public float weightedTotalPoints;
-    public float weightedPercentage;
-    public double numericScore;
-    public boolean wysiwygSubmission;
-    public boolean onlineAssessment;
+    private boolean cheated;
+    private boolean dropped;
+    private float percentage;
+    private String letterGrade;
+    private float weightedScore;
+    private float weightedTotalPoints;
+    private float weightedPercentage;
+    private double numericScore;
+    private boolean wysiwygSubmission;
+    private boolean onlineAssessment;
 
     @SuppressWarnings("ConstantConditions")
     public ClassbookActivity(Element activity) {

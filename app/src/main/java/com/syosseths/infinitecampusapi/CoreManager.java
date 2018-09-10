@@ -32,7 +32,7 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class CoreManager {
+class CoreManager {
     private String cookies = "";
     private DistrictInfo distInfo;
     private String districtCode;

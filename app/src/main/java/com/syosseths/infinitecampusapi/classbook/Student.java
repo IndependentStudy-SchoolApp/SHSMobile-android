@@ -25,16 +25,16 @@ import java.util.ArrayList;
 import nu.xom.Element;
 
 public class Student {
-    public String studentNumber;
+    private String studentNumber;
     public boolean hasSecurityRole = false;
     public String personID;
-    public String lastName;
-    public String firstName;
-    public String middleName;
-    public String isGuardian;
+    private String lastName;
+    private String firstName;
+    private String middleName;
+    private String isGuardian;
 
     public ArrayList<Calendar> calendars = new ArrayList<>();
-    public GradingDetailSummary gradeDetailSummary;
+    private GradingDetailSummary gradeDetailSummary;
     public ArrayList<Classbook> classbooks = new ArrayList<>();
 
     private DistrictInfo distInfo;
@@ -64,7 +64,7 @@ public class Student {
         }
     }
 
-    public String getPictureURL() {
+    private String getPictureURL() {
         return distInfo.getDistrictBaseURL() + "personPicture.jsp?personID=" + personID;
     }
 

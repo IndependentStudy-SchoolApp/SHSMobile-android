@@ -31,7 +31,7 @@ import nu.xom.ParsingException;
 
 import static com.syosseths.infinitecampusapi.Main.print;
 
-public class InfoLogger {
+class InfoLogger {
 
     private CoreManager core;
 

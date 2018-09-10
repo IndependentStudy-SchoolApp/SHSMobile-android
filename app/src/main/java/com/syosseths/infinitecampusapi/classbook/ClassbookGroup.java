@@ -21,25 +21,25 @@ import java.util.ArrayList;
 
 import nu.xom.Element;
 
-public class ClassbookGroup {
-    public String activityID;
-    public String name;
-    public float weight;
-    public int seq;
-    public boolean notGraded;
+class ClassbookGroup {
+    private String activityID;
+    private String name;
+    private float weight;
+    private int seq;
+    private boolean notGraded;
     //hidePortal
     //hasValidScore
     //composite
     //calcEclude
-    public int termID;
-    public int taskID;
-    public float percentage;
-    public String formattedPercentage;
-    public String letterGrade;
-    public float pointsEarned;
-    public float totalPointsPossible;
+    private int termID;
+    private int taskID;
+    private float percentage;
+    private String formattedPercentage;
+    private String letterGrade;
+    private float pointsEarned;
+    private float totalPointsPossible;
 
-    public ArrayList<ClassbookActivity> activities = new ArrayList<>();
+    private ArrayList<ClassbookActivity> activities = new ArrayList<>();
 
     public ClassbookGroup(Element group) {
         activityID = group.getAttributeValue("activityID");

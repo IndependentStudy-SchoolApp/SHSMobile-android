@@ -21,28 +21,28 @@ import java.util.ArrayList;
 
 import nu.xom.Element;
 
-public class ClassbookTask {
-    public String taskID;
-    public String name;
-    public float weight;
-    public boolean isWeighted;
+class ClassbookTask {
+    private String taskID;
+    private String name;
+    private float weight;
+    private boolean isWeighted;
     // hasValidGroup
     // hasValidWeightedGroup
     // locked
-    public boolean gradeBookPosted;
-    public int taskSeq;
-    public int termID;
-    public String termName;
-    public int termSeq;
-    public float totalPointsPossible;
-    public float pointsEarned;
-    public float percentage;
-    public String letterGrade;
-    public String formattedPercentage;
-    public int curveID;
+    private boolean gradeBookPosted;
+    private int taskSeq;
+    private int termID;
+    private String termName;
+    private int termSeq;
+    private float totalPointsPossible;
+    private float pointsEarned;
+    private float percentage;
+    private String letterGrade;
+    private String formattedPercentage;
+    private int curveID;
 
-    public ArrayList<ClassbookTask> tasks = new ArrayList<>();
-    public ArrayList<ClassbookGroup> groups = new ArrayList<>();
+    private ArrayList<ClassbookTask> tasks = new ArrayList<>();
+    private ArrayList<ClassbookGroup> groups = new ArrayList<>();
 
     public ClassbookTask(Element task) {
 
