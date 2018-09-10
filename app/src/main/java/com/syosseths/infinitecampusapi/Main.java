@@ -17,26 +17,39 @@
 
 package com.syosseths.infinitecampusapi;
 
-import com.syosseths.infinitecampusapi.classbook.ClassbookManager;
-import com.syosseths.infinitecampusapi.classbook.Student;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URL;
 
-import nu.xom.Builder;
-import nu.xom.Document;
-import nu.xom.Element;
 import nu.xom.ParsingException;
 
 public class Main {
-    static PrintWriter out;
+    private final static int SUCCESS = 0, ERROR_INVALID_CREDENTIALS = 1;
 
+    private static PrintWriter out;
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static void main(String[] args) throws IOException, ParsingException {
 
+        InfoLogger logger = new InfoLogger(loginAndReturnCoreManager());
+
+        createFile("grades");
+
+        logger.logGrades();
+
+        out.close();
+
+        System.out.println("Log dump successful!");
+
+        System.exit(SUCCESS);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private static CoreManager loginAndReturnCoreManager() throws IOException {
         String username;
         String password;
         String districtCode;
@@ -57,40 +70,21 @@ public class Main {
         if (!successfulLogin) {
             FileManagement.deleteExisting();
             System.out.println("Invalid Username/Password or District Code");
-            System.exit(0);
-            System.in.read();
-            return;
+            System.exit(ERROR_INVALID_CREDENTIALS);
         }
 
-        try {
-            out = new PrintWriter(new BufferedWriter(new FileWriter("infinite-campus-info/grades.txt")));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        URL timeURL = new URL(core.getDistrictInfo().getDistrictBaseURL() + "/prism?x=portal.PortalOutline&appName=" + core.getDistrictInfo().getDistrictAppName());
-        Builder builder = new Builder();
-        Document doc = builder.build(new ByteArrayInputStream(core.getContent(timeURL, false).getBytes()));
-        Element root = doc.getRootElement();
-        Student user = new Student(root.getFirstChildElement("PortalOutline").getFirstChildElement("Family").getFirstChildElement("Student"), core.getDistrictInfo());
-
-        print(user.getInfoString());
-
-        URL gradesURL = new URL(core.getDistrictInfo().getDistrictBaseURL() + "/prism?&x=portal.PortalClassbook-getClassbookForAllSections&mode=classbook&personID=" + user.personID + "&structureID=" + user.calendars.get(0).schedules.get(0).id + "&calendarID=" + user.calendars.get(0).calendarID);
-        Document doc2 = builder.build(new ByteArrayInputStream(core.getContent(gradesURL, false).getBytes()));
-        ClassbookManager manager = new ClassbookManager(doc2.getRootElement().getFirstChildElement("SectionClassbooks"));
-        print(manager.getInfoString());
-
-        out.close();
-
-        System.out.println("User info dump successful!");
-        System.out.println("Press any key to exit...");
-
-        System.in.read();
+        return core;
     }
 
-    public static void print(String s) {
+    public static void createFile(String name) {
+        try {
+            out = new PrintWriter(new BufferedWriter(new FileWriter("infinite-campus-info/" + name + ".txt")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void print(String s) {
         System.out.println(s);
         out.println(s);
     }
