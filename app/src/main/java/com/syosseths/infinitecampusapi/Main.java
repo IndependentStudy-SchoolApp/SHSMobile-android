@@ -20,72 +20,35 @@ package com.syosseths.infinitecampusapi;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import nu.xom.ParsingException;
 
 public class Main {
-    private final static int SUCCESS = 0, ERROR_INVALID_CREDENTIALS = 1;
-
-    private static PrintWriter out;
+    public final static int ERROR_INVALID_CREDENTIALS = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static void main(String[] args) throws IOException, ParsingException {
 
-        InfoLogger logger = new InfoLogger(loginAndReturnCoreManager());
-
-        createFile("grades");
-
-        logger.logGrades();
-
-        out.close();
-
-        System.out.println("Log dump successful!");
-
-        System.exit(SUCCESS);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private static CoreManager loginAndReturnCoreManager() throws IOException {
-        String username;
-        String password;
-        String districtCode;
-
-        FileManagement.deleteGrades();
-        if (!FileManagement.getExisting()) {
-            FileManagement.saveDistrictCode();
-            FileManagement.saveUsername();
-            FileManagement.savePasswords();
-        }
-        districtCode = FileManagement.getDistrictCode();
-        username = FileManagement.getUsername();
-        password = FileManagement.getPassword();
-
-        CoreManager core = new CoreManager(districtCode);
-
-        boolean successfulLogin = core.attemptLogin(username, password, core.getDistrictInfo());
-        if (!successfulLogin) {
-            FileManagement.deleteExisting();
-            System.out.println("Invalid Username/Password or District Code");
-            System.exit(ERROR_INVALID_CREDENTIALS);
+        if (!FileManager.loginFilesExist()) {
+            FileManager.saveUsername();
+            FileManager.savePasswords();
+            FileManager.saveDistrictCode();
         }
 
-        return core;
+        String username = FileManager.getUsername();
+        String password = FileManager.getPassword();
+        String districtCode = FileManager.getDistrictCode();
+        CoreManager core = new CoreManager(username, password, districtCode);
+
+        DataRetriever dataRetriever = new DataRetriever(core);
+        dataRetriever.logGrades();
+
+        print("Log dump successful!");
+        System.exit(0);
     }
 
-    private static void createFile(String name) {
-        try {
-            out = new PrintWriter(new BufferedWriter(new FileWriter("infinite-campus-info/" + name + ".txt")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    static void print(String s) {
+    public static void print(String s) {
         System.out.println(s);
-        out.println(s);
     }
 }
