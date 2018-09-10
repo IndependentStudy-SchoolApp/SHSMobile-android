@@ -66,8 +66,6 @@ public class ClassbookTask {
                 groups.add(new ClassbookGroup(task.getFirstChildElement("groups").getChildElements("ClassbookGroup").get(i)));
         } catch (NumberFormatException e) {
             e.printStackTrace();
-        } catch (NullPointerException e) {
-            e.printStackTrace();
         }
 
         try {
